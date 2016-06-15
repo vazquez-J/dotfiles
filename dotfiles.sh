@@ -18,7 +18,11 @@ ln -s -f ${BASEDIR}/.gitconfig ~/.gitconfig
 echo "linking subl"
 ln -s -f ${BASEDIR}/Python3.sublime-build /home/$USER/.config/sublime-text3/Packages/User/Python3.sublime-build
 
-# ln -s -f ${BASEDIR}/
+#i3-wm
+# ln -s -f ${BASEDIR}/.i3/config /home/$USER/.config/
+
+#spotify.desktop --> /usr/share/applications/spotify.desktop
+
 # ln -s -f ${BASEDIR}
 # ln -s -f ${BASEDIR}
 # ln -s -f ${BASEDIR}
