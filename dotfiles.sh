@@ -19,8 +19,8 @@ echo "linking bashrc"
 ln -sv -f ${BASEDIR}/bash/.bashrc ~/.bashrc
 
 #subl
-#echo "linking subl"
-#ln -sv -f ${BASEDIR}/Python3.sublime-build /home/$USER/.config/sublime-text3/Packages/User/Python3.sublime-build
+echo "***linking subl***"
+ln -sv -f ${BASEDIR}/subl/ython3.sublime-build /home/$USER/.config/sublime-text3/Packages/User/Python3.sublime-build
 #ADD
 #/home/rvazquez/.config/sublime-text-3/Packages/User/C++11.sublime-build
 #i3-wm
