@@ -1,10 +1,7 @@
 #! /usr/bin/python3
-import sys
-import logging
+import re
 import urllib.request # Only used for dl .deb
-from lxml import html
 
-import requests # much easier to use then urllib2
 
 """
 References:
@@ -16,23 +13,17 @@ http://stackoverflow.com/questions/4289331/python-extract-numbers-from-a-string/
 # Assuming lots of things here, the version number is 4 digits
 DEBUG = False
 
-	
-def main():
-	res = requests.get('https://www.sublimetext.com/3')
-	webpage = html.fromstring(res.content) # Contains whole HTML file in a tree structure
-	href = webpage.xpath('//a/@href')
-	for links in href:
-		if 'amd64' in links:
-			sublime_download = links
-	print(sublime_download)
-	# dl sublime text .deb file 
-	# Either install from python or from bash script
-	if not DEBUG:
-		try:
-			local_fn, headers = urllib.request.urlretrieve(sublime_download, './sublime_text.deb')
-			
-		except Exception :
-			raise URLError
+# Scraping - open website and read contents
+response = urllib.request.urlopen('https://www.sublimetext.com/3')	
+html = response.read().decode('utf-8')
 
-if __name__ == '__main__':
-	main()
+# parse with RE
+m = re.search('The latest build is [0-9]+',html)
+build = m.group(0).split()[-1]
+print('build {}'.format(build))
+
+download_url = 'https://download.sublimetext.com/sublime-text_build-{}_amd64.deb'.format(build)
+output = 'sublime_text_{}.deb'.format(build)
+
+urllib.request.urlretrieve(download_url, output)
+print('downloading subl to {}'.format(output) )
