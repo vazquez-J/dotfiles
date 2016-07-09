@@ -1,9 +1,10 @@
 #! /usr/bin/python3
-import requests # much easier to use then urllib2
 import sys
-from lxml import html
-import urllib.request # Only used for dl .deb
 import logging
+import urllib.request # Only used for dl .deb
+from lxml import html
+
+import requests # much easier to use then urllib2
 
 """
 References:
