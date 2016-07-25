@@ -7,25 +7,29 @@ echo $BASEDIR
 
 #ack 
 echo "*** linking ackrc***"
-echo ""
 ln -sv -f ${BASEDIR}/ack/.ackrc ~
+echo ""
 
 #vim
-echo "linking .vimrc"
+echo "***linking .vimrc***"
 ln -sv -f ${BASEDIR}/.vimrc ~/.vimrc
+echo ""
 
 #git
-echo "linking glob gitconfig and gitignore"
+echo "***linking glob gitconfig and gitignore***"
 ln -sv -f ${BASEDIR}/git/.gitignore ~/.gitignore
 ln -sv -f ${BASEDIR}/git/.gitconfig ~/.gitconfig
+echo ""
 
 #bashrc
-echo "linking bashrc"
+echo "***linking bashrc***"
 ln -sv -f ${BASEDIR}/bash/.bashrc ~/.bashrc
+echo ""
 
 #subl
 echo "***linking subl***"
-ln -sv -f ${BASEDIR}/subl/Python3.sublime-build /home/$USER/.config/sublime-text3/Packages/User/Python3.sublime-build
+ln -sv -f ${BASEDIR}/subl/Python3.sublime-build /home/$USER/.config/sublime-text-3/Packages/User/Python3.sublime-build
+echo ""
 
 #Install subl
 #Check for deb package
