@@ -1,0 +1,7 @@
+# list of apt packages to install and other stuff
+
+1. mkdir Dev
+
+2. apt-get install git vim
+
+3. apt-get purge pidgeon thunderbird brasero

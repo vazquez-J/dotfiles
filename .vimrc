@@ -14,3 +14,9 @@ set number
 
 " Show filename in titlebar
 set title
+
+" python stuff
+set nocompatible
+set smarttab
+set backspace=indent,eol,start
+filetype on
