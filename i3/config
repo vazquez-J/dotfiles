@@ -11,6 +11,30 @@
 
 set $mod Mod4
 
+
+set_from_resource $black        color0
+set_from_resource $darkblack    color8
+set_from_resource $darkred      color1
+set_from_resource $red          color9
+set_from_resource $darkgreen    color2
+set_from_resource $green        color10
+set_from_resource $darkyellow   color3
+set_from_resource $yellow       color11
+set_from_resource $darkblue     color4
+set_from_resource $blue         color12
+set_from_resource $darkmagenta  color5
+set_from_resource $magenta      color13
+set_from_resource $darkcyan     color6
+set_from_resource $cyan         color14
+set_from_resource $darkwhite    color7
+set_from_resource $white        color15
+
+
+#custom colors for black
+# set $black            #282828
+# set $darkblack                #1d2021
+set $transparent        #00000000
+
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below. ISO 10646 = Unicode
 ## OLD
@@ -21,7 +45,7 @@ set $mod Mod4
 # chose a FreeType font, such as:
 # font pango:DejaVu Sans Mono 10
 ## NEW
-font pango: Ubuntu Mono 15
+font pango: Ubuntu Mono 10
 
 
 # Use Mouse+$mod to drag floating windows to their wanted position
@@ -40,7 +64,10 @@ bindsym $mod+Shift+q kill
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that installed.
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop 
-bindsym $mod+d exec rofi -show run -lines 3 -eh 2 -width 100 -padding 800 -opacity "85" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "Ubuntu Mono 15"
+
+# bindsym $mod+d exec rofi -show run -lines 3 -eh 2 -width 100 -padding 800 -opacity "85" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "Ubuntu Mono 15"
+
+bindsym $mod+d exec rofi -show run -lines 3 -eh 2 -width 25 -opacity "85" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" #-hlbg "$bg-color" #-hlfg "#9575cd" #-font "Ubuntu Mono 15 #-padding 100
 
 
 # change focus
@@ -173,16 +200,43 @@ bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
-	status_command python3 /home/vazquez/.config/i3pystatus/config.py
+
+	# i3Pystatus
+	#status_command python3 /home/rvazquez/Dev/dotfiles/i3pystatus/config.py
         # i3bar position
-	position bottom
+	#position bottom
+        #workspace_buttons yes
+
+bar {
+        status_command /usr/bin/i3blocks
+        i3bar_command i3bar 
+        position bottom
+        font pango:Hack 8
+        strip_workspace_numbers yes
+        separator_symbol "--"
         workspace_buttons yes
+        bindsym button4 nop
+        bindsym button5 nop
+      #  tray_output none
+      #  tray_padding 0
+      #  height 40
+        colors {
+      #          statusline              $white
+      #          background              $transparent
+      #          separator               $transparent
+#     #           BORDER                  BACKGROUND      TEXT
+                focused_workspace       $transparent    $transparent    $black
+      #          inactive_workspace      $transparent    $transparent    $white
+      #          active_workspace        $transparent    $transparent    $white
+      #          urgent_workspace        $darkred            $darkred        $transparent
+      #          binding_mode            $darkred            $darkred        $transparent
+        }
+
 }
 
 ##Lock screen
-#bindsym Control_L+Alt_L+l exec i3lock 
-bindsym $mod+l exec /home/vazquez/.scripts/i3lockscreen
+#bindsym Control_# L+Alt_L+l exec i3lock 
+bindsym $mod+l ex# ec /home/vazquez/.scripts/i3lockscreen
 ##Launch Nautilus
 bindsym $mod+e exec nautilus 
 
@@ -326,5 +380,5 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 10 # decrease screen brightne
 
 
 exec subl
-exec google-chrome
-exec /home/vazquez/bin/monitor_toggle.py
+# exec google-chrome
+# exec /home/vazquez/bin/monitor_toggle.py
