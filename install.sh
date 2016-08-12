@@ -1,6 +1,11 @@
 #!/bin/bash
 #REF: http://www.anishathalye.com/2014/08/03/managing-your-dotfiles/
+<<<<<<< HEAD
 #REF: https://realpython.com/blog/python/setting-up-sublime-text-3-for-full-stack-python-development/
+=======
+
+
+>>>>>>> 441bd994b3d6634de9b27af98720f7de39e09e5d
 BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 echo $BASEDIR
 
@@ -46,8 +51,13 @@ fi
 
 #ADD
 #/home/rvazquez/.config/sublime-text-3/Packages/User/C++11.sublime-build
-#i3-wm
-# ln -s -f ${BASEDIR}/.i3/config /home/$USER/.config/
+
+# Install with apt this is for i3 stuff 
+sudo apt install xbacklight rofi
+
+#i3-wm i3Pystatus
+ln -sv -f ${BASEDIR}/i3/config /home/$USER/.config/i3/config
+# ln -sv -f ${BASEDIR}/i3Pystatus/config.py --> can run directly from dotfiles dir
 
 #spotify.desktop --> /usr/share/applications/spotify.desktop
 
@@ -55,7 +65,6 @@ fi
 # Add UDEV
 # Android udev rules
 
-# ln -s -f ${BASEDIR}
 # ln -s -f ${BASEDIR}
 # ln -s -f ${BASEDIR}
 # ln -s -f ${BASEDIR}
