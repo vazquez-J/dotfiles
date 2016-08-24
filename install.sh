@@ -57,7 +57,7 @@ echo ""
 
 # Install with apt this is for i3 stuff 
 
-echo "Diverting ack exe"
+# echo "Diverting ack exe"
 # sudo dpkg-divert --local --divert /usr/bin/ack --rename --add /usr/bin/ack-grep
 # to remove diversion sudo dpkg-divert --remove /usr/bin/ack-grep
 
