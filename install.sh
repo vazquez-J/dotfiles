@@ -10,36 +10,36 @@ BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 echo $BASEDIR
 
 #ack https://www.digitalocean.com/community/tutorials/how-to-install-and-use-ack-a-grep-replacement-for-developers-on-ubuntu-14-04
-echo " Linking ackrc***"
+echo " Linking ackrc"
 ln -sv -f ${BASEDIR}/ack/.ackrc ~
 sleep 5
 echo ""
 
 #vim
-echo " Linking .vimrc***"
+echo " Linking .vimrc"
 ln -sv -f ${BASEDIR}/.vimrc ~/.vimrc
 sleep 5
 echo ""
 
 #git
-echo " Linking glob gitconfig and gitignore***"
+echo " Linking glob gitconfig and gitignore"
 ln -sv -f ${BASEDIR}/git/.gitignore ~/.gitignore
 ln -sv -f ${BASEDIR}/git/.gitconfig ~/.gitconfig
 sleep 5
 echo ""
 
 #bashrc
-echo " Linking bashrc***"
+echo " Linking bashrc"
 ln -sv -f ${BASEDIR}/bash/.bashrc ~/.bashrc
 echo ""
 
 #subl
-echo " Linking Python3 sublime build***"
+echo " Linking Python3 sublime build"
 ln -sv -f ${BASEDIR}/subl/Python3.sublime-build /home/$USER/.config/sublime-text-3/Packages/User/Python3.sublime-build
 sleep 5
 echo ""
 
-echo " Linking Python sublime settings "
+echo " Linking Python sublime settings"
 ln -svf   ${BASEDIR}/subl/Python.sublime-settings /home/$USER/.config/sublime-text-3/Packages/User/Python.sublime-settings
 sleep 5
 echo ""
