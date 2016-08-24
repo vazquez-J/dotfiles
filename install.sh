@@ -5,6 +5,7 @@
 echo 'Installing packages...'
 sleep 2
 sudo apt install -qq -y  xbacklight redshift git vim spotify-client meld build-essential ack-grep
+sudo apt purge -y pidgeon thunderbird brasero
 
 BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 echo $BASEDIR
