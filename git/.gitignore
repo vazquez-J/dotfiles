@@ -5,5 +5,8 @@
 *.docx
 *.txt
 *.png
-*bin
 *.swp
+
+# Python
+*.pyc
+*.__pycache__
