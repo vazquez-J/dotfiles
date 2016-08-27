@@ -49,13 +49,16 @@ echo ""
 
 #Install subl
 # create bin dire
-if [ -f ${BASEDIR}/bin/sublime_text_*.deb ]; then
-	echo "deb file found"
-	echo "Installing ..."
-	gdebi ${BASEDIR}/bin/sublime_text_*.deb
-else
-	echo "deb not found"
-fi
+
+function subl{
+	if [ -f ${BASEDIR}/bin/sublime_text_*.deb ]; then
+		echo "deb file found"
+		echo "Installing ..."
+		gdebi ${BASEDIR}/bin/sublime_text_*.deb
+	else
+		echo "deb not found"
+	fi
+}
 
 #Check for deb package
 #If deb package downloaded dpkg -i it
