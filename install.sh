@@ -1,14 +1,11 @@
 #!/bin/bash
 #REF: http://www.anishathalye.com/2014/08/03/managing-your-dotfiles/
-<<<<<<< HEAD
 #REF: https://realpython.com/blog/python/setting-up-sublime-text-3-for-full-stack-python-development/
-=======
 
 echo 'Installing packages...'
 sleep 2
 sudo apt install -qq -y  xbacklight redshift git vim spotify-client meld build-essential ack-grep
 
->>>>>>> 441bd994b3d6634de9b27af98720f7de39e09e5d
 BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 echo $BASEDIR
 
@@ -39,11 +36,8 @@ echo ""
 #subl
 echo " Linking Python3 sublime build"
 ln -sv -f ${BASEDIR}/subl/Python3.sublime-build /home/$USER/.config/sublime-text-3/Packages/User/Python3.sublime-build
-<<<<<<< HEAD
 ln -svf   ${BASEDIR}/subl/Python.sublime-settings /home/$USER/.config/sublime-text-3/Packages/User/Python.sublime-settings
-=======
 sleep 5
->>>>>>> 7c171480c099ad6d39bb328b0d116d64c830d7e2
 echo ""
 
 echo " Linking Python sublime settings"
@@ -81,8 +75,6 @@ fi
 
 # ln -sv -f ${BASEDIR}/i3Pystatus/config.py --> can run directly from dotfiles dir
 
-<<<<<<< HEAD
-
 # Add UDEV
 # Android udev rules
 
@@ -91,5 +83,3 @@ fi
 # ln -s -f ${BASEDIR}
 # ln -s -f ${BASEDIR}
 # ln -s -f ${BASEDIR}
-=======
->>>>>>> 7c171480c099ad6d39bb328b0d116d64c830d7e2
