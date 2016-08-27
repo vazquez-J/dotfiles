@@ -36,7 +36,6 @@ echo ""
 #subl
 echo " Linking Python3 sublime build"
 ln -sv -f ${BASEDIR}/subl/Python3.sublime-build /home/$USER/.config/sublime-text-3/Packages/User/Python3.sublime-build
-ln -svf   ${BASEDIR}/subl/Python.sublime-settings /home/$USER/.config/sublime-text-3/Packages/User/Python.sublime-settings
 sleep 5
 echo ""
 
