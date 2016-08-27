@@ -4,37 +4,55 @@
 #REF: https://realpython.com/blog/python/setting-up-sublime-text-3-for-full-stack-python-development/
 =======
 
+echo 'Installing packages...'
+sleep 2
+sudo apt install -qq -y  xbacklight redshift git vim spotify-client meld build-essential ack-grep
 
 >>>>>>> 441bd994b3d6634de9b27af98720f7de39e09e5d
 BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 echo $BASEDIR
 
-#ack 
-echo "*** linking ackrc***"
+#ack https://www.digitalocean.com/community/tutorials/how-to-install-and-use-ack-a-grep-replacement-for-developers-on-ubuntu-14-04
+echo " Linking ackrc"
 ln -sv -f ${BASEDIR}/ack/.ackrc ~
+sleep 5
 echo ""
 
 #vim
-echo "***linking .vimrc***"
+echo " Linking .vimrc"
 ln -sv -f ${BASEDIR}/.vimrc ~/.vimrc
+sleep 5
 echo ""
 
 #git
-echo "***linking glob gitconfig and gitignore***"
+echo " Linking glob gitconfig and gitignore"
 ln -sv -f ${BASEDIR}/git/.gitignore ~/.gitignore
 ln -sv -f ${BASEDIR}/git/.gitconfig ~/.gitconfig
+sleep 5
 echo ""
 
 #bashrc
-echo "***linking bashrc***"
+echo " Linking bashrc"
 ln -sv -f ${BASEDIR}/bash/.bashrc ~/.bashrc
 echo ""
 
 #subl
-echo "***linking subl***"
+echo " Linking Python3 sublime build"
 ln -sv -f ${BASEDIR}/subl/Python3.sublime-build /home/$USER/.config/sublime-text-3/Packages/User/Python3.sublime-build
+<<<<<<< HEAD
 ln -svf   ${BASEDIR}/subl/Python.sublime-settings /home/$USER/.config/sublime-text-3/Packages/User/Python.sublime-settings
+=======
+sleep 5
+>>>>>>> 7c171480c099ad6d39bb328b0d116d64c830d7e2
 echo ""
+
+echo " Linking Python sublime settings"
+ln -svf   ${BASEDIR}/subl/Python.sublime-settings /home/$USER/.config/sublime-text-3/Packages/User/Python.sublime-settings
+sleep 5
+echo ""
+# sudo ln -svf spotify.desktop /usr/share/applications/spotify.desktop
+#i3-wm i3Pystatus
+# ln -sv -f ${BASEDIR}/i3/config /home/$USER/.config/i3/config
 
 #Install subl
 # create bin dire
@@ -53,14 +71,17 @@ fi
 #/home/rvazquez/.config/sublime-text-3/Packages/User/C++11.sublime-build
 
 # Install with apt this is for i3 stuff 
-sudo apt install xbacklight rofi
 
-#i3-wm i3Pystatus
-ln -sv -f ${BASEDIR}/i3/config /home/$USER/.config/i3/config
+# echo "Diverting ack exe"
+# sudo dpkg-divert --local --divert /usr/bin/ack --rename --add /usr/bin/ack-grep
+# to remove diversion sudo dpkg-divert --remove /usr/bin/ack-grep
+
+# Install for i3 stuff
+# sudo apt install -qq  rofi 
+
 # ln -sv -f ${BASEDIR}/i3Pystatus/config.py --> can run directly from dotfiles dir
 
-#spotify.desktop --> /usr/share/applications/spotify.desktop
-
+<<<<<<< HEAD
 
 # Add UDEV
 # Android udev rules
@@ -70,3 +91,5 @@ ln -sv -f ${BASEDIR}/i3/config /home/$USER/.config/i3/config
 # ln -s -f ${BASEDIR}
 # ln -s -f ${BASEDIR}
 # ln -s -f ${BASEDIR}
+=======
+>>>>>>> 7c171480c099ad6d39bb328b0d116d64c830d7e2
