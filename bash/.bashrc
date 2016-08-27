@@ -123,3 +123,6 @@ fi
 
 ## RV 
 export PROMPT_COMMAND="history -a; history -n"
+export WORKON_HOME=$HOME/.virtualenvs
+
+source /usr/local/bin/virtualenvwrapper_lazy.sh
