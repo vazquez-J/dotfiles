@@ -44,6 +44,11 @@ ln -svf   ${BASEDIR}/subl/Python.sublime-settings /home/$USER/.config/sublime-te
 sleep 5
 echo ""
 
+echo " Linking redshift.conf"
+sudo ln -svf   ${BASEDIR}/redshift/redshift.conf ~/.config/redshift.conf
+sleep 5
+echo ""
+
 echo " Linking geoclue.conf"
 sudo ln -svf   ${BASEDIR}/geoclue.conf /etc/geoclue/geoclue.conf
 sleep 5
