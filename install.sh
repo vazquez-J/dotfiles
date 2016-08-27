@@ -51,6 +51,7 @@ echo ""
 # create bin dire
 if [ -f ${BASEDIR}/bin/sublime_text_*.deb ]; then
 	echo "deb file found"
+	echo "Installing ..."
 	gdebi ${BASEDIR}/bin/sublime_text_*.deb
 else
 	echo "deb not found"
