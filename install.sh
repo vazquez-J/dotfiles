@@ -43,14 +43,20 @@ echo " Linking Python sublime settings"
 ln -svf   ${BASEDIR}/subl/Python.sublime-settings /home/$USER/.config/sublime-text-3/Packages/User/Python.sublime-settings
 sleep 5
 echo ""
+
+echo " Linking geoclue.conf"
+sudo ln -svf   ${BASEDIR}/geoclue.conf /etc/geoclue/geoclue.conf
+sleep 5
+echo ""
 # sudo ln -svf spotify.desktop /usr/share/applications/spotify.desktop
+# ln -s -f ${BASEDIR}
 #i3-wm i3Pystatus
 # ln -sv -f ${BASEDIR}/i3/config /home/$USER/.config/i3/config
 
 #Install subl
 # create bin dire
 
-function subl{
+function subl {
 	if [ -f ${BASEDIR}/bin/sublime_text_*.deb ]; then
 		echo "deb file found"
 		echo "Installing ..."
@@ -81,7 +87,6 @@ function subl{
 # Add UDEV
 # Android udev rules
 
-# ln -s -f ${BASEDIR}
 # ln -s -f ${BASEDIR}
 # ln -s -f ${BASEDIR}
 # ln -s -f ${BASEDIR}
