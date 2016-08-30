@@ -2,6 +2,13 @@
 
 1. mkdir Dev
 
-2. apt-get install git vim
+- for spotify 
+	sudo sh -c 'echo "deb http://repository.spotify.com stable non-free" >> /etc/apt/sources.list.d/spotify.list'
+
+	sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 94558F59
+
+2. apt-get install git vim redshift python3-dev python-pip python3-pip build-essential virtualenvwrapper
 
 3. apt-get purge pidgeon thunderbird brasero
+
+4. change firefoxs in about:config - layout.css.devPixelsPerPx

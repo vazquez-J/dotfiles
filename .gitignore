@@ -1,4 +1,5 @@
-*bin
+./bin/
+*.deb
 *__pycache__
 
 *.log

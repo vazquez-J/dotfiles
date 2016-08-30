@@ -1,6 +1,6 @@
 #!/bin/bash
-#/home/$USER/.config/sublime-text3/Packages/User -> This is where 'Python3.sublime-build' goes
 #REF: http://www.anishathalye.com/2014/08/03/managing-your-dotfiles/
+#REF: https://realpython.com/blog/python/setting-up-sublime-text-3-for-full-stack-python-development/
 
 echo 'Installing packages...'
 sleep 2
@@ -44,11 +44,34 @@ echo " Linking Python sublime settings"
 ln -svf   ${BASEDIR}/subl/Python.sublime-settings /home/$USER/.config/sublime-text-3/Packages/User/Python.sublime-settings
 sleep 5
 echo ""
+
+echo " Linking redshift.conf"
+sudo ln -svf   ${BASEDIR}/redshift/redshift.conf ~/.config/redshift.conf
+sleep 5
+echo ""
+
+echo " Linking geoclue.conf"
+sudo ln -svf   ${BASEDIR}/geoclue.conf /etc/geoclue/geoclue.conf
+sleep 5
+echo ""
 # sudo ln -svf spotify.desktop /usr/share/applications/spotify.desktop
+# ln -s -f ${BASEDIR}
 #i3-wm i3Pystatus
 # ln -sv -f ${BASEDIR}/i3/config /home/$USER/.config/i3/config
 
 #Install subl
+# create bin dire
+
+function subl {
+	if [ -f ${BASEDIR}/bin/sublime_text_*.deb ]; then
+		echo "deb file found"
+		echo "Installing ..."
+		gdebi ${BASEDIR}/bin/sublime_text_*.deb
+	else
+		echo "deb not found"
+	fi
+}
+
 #Check for deb package
 #If deb package downloaded dpkg -i it
 #Else call python script
@@ -67,3 +90,10 @@ echo ""
 
 # ln -sv -f ${BASEDIR}/i3Pystatus/config.py --> can run directly from dotfiles dir
 
+# Add UDEV
+# Android udev rules
+
+# ln -s -f ${BASEDIR}
+# ln -s -f ${BASEDIR}
+# ln -s -f ${BASEDIR}
+# ln -s -f ${BASEDIR}
