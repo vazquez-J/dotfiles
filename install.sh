@@ -2,6 +2,10 @@
 #REF: http://www.anishathalye.com/2014/08/03/managing-your-dotfiles/
 #REF: https://realpython.com/blog/python/setting-up-sublime-text-3-for-full-stack-python-development/
 
+echo 'Installing python specific packages...'
+sudo apt install -qq -y python-pip
+sleep 2
+
 echo 'Installing packages...'
 sleep 2
 sudo apt install -qq -y  xbacklight redshift git vim spotify-client meld build-essential ack-grep geoclue-2.0
