@@ -17,6 +17,12 @@ BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 echo $BASEDIR
 
 
+# TODO: virtualenv setup
+# if directoy not present create directory
+# ln -sv -f ${BASEDIR}/ack/.ackrc ~
+# sleep 5
+# echo ""
+
 #ack https://www.digitalocean.com/community/tutorials/how-to-install-and-use-ack-a-grep-replacement-for-developers-on-ubuntu-14-04
 echo " Linking ackrc"
 ln -sv -f ${BASEDIR}/ack/.ackrc ~
