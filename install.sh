@@ -110,3 +110,6 @@ function subl {
 # ln -s -f ${BASEDIR}
 # ln -s -f ${BASEDIR}
 # ln -s -f ${BASEDIR}
+
+# TODO:
+# 1. Add package control to SUBL
