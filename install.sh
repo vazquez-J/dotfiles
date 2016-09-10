@@ -73,17 +73,13 @@ echo ""
 # ln -sv -f ${BASEDIR}/i3/config /home/$USER/.config/i3/config
 
 #Install subl
-# create bin dire
-
-function subl {
-	if [ -f ${BASEDIR}/bin/sublime_text_*.deb ]; then
-		echo "deb file found"
-		echo "Installing ..."
-		gdebi ${BASEDIR}/bin/sublime_text_*.deb
-	else
-		echo "deb not found"
-	fi
-}
+if test -e /home/user/Dev/dotfiles/bin/sublime_text_*.deb; then
+  echo "Sublime text already installed" >&2
+else
+  echo "Running sublime text installer " >&2
+  python3 /home/user/Dev/dotfiles/scripts/sublime_downloader.py && sudo gdebi ./bin/*.deb
+  exit 1
+fi
 
 #Check for deb package
 #If deb package downloaded dpkg -i it
