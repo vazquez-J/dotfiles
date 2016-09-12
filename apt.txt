@@ -12,3 +12,5 @@
 3. apt-get purge pidgeon thunderbird brasero
 
 4. change firefoxs in about:config - layout.css.devPixelsPerPx
+
+5. Install grafana http://docs.grafana.org/installation/debian/
