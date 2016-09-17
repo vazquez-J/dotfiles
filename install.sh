@@ -100,7 +100,7 @@ fi
 # ln -sv -f ${BASEDIR}/i3Pystatus/config.py --> can run directly from dotfiles dir
 
 # Add UDEV
-# Android udev rules
+# Android udev rules wget -S -O - http://source.android.com/source/51-android.rules | sed "s/<username>/$USER/" | sudo tee >/dev/null /etc/udev/rules.d/51-android.rules; sudo udevadm control --reload-rules
 
 # ln -s -f ${BASEDIR}
 # ln -s -f ${BASEDIR}
