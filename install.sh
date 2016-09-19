@@ -23,6 +23,12 @@ echo $BASEDIR
 # sleep 5
 # echo ""
 
+# Linking GDB 
+echo " Linking gdbinit"
+ln -svf ${BASEDIR}/gdb/.gdbinit ~
+sleep 4
+echo ""
+
 #ack https://www.digitalocean.com/community/tutorials/how-to-install-and-use-ack-a-grep-replacement-for-developers-on-ubuntu-14-04
 echo " Linking ackrc"
 ln -sv -f ${BASEDIR}/ack/.ackrc ~
