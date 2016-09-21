@@ -131,3 +131,4 @@ export WORKON_HOME=$HOME/.virtualenvs
 source /usr/local/bin/virtualenvwrapper_lazy.sh
 
 export CCACHE=1
+export ANDROID_NDK_HOME=/home/$USER/.local/share/android-ndk-r12b
