@@ -127,6 +127,5 @@ fi
 ## RV 
 export PROMPT_COMMAND="history -a; history -n"
 export WORKON_HOME=$HOME/.virtualenvs
-export PATH=$PATH:/home/$USER/.local/share/Android/android-ndk-r12b
 
 source /usr/local/bin/virtualenvwrapper_lazy.sh

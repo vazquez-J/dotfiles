@@ -2,11 +2,12 @@
 import re
 import urllib.request # Only used for dl .deb
 import logging
+import getpass
 
 
 logging.basicConfig(level=logging.INFO)
 logging.getLogger(__name__)
-
+USER = getpass.getuser()
 """
 References:
 http://docs.python-guide.org/en/latest/scenarios/scrape/
@@ -32,7 +33,7 @@ download_url = 'https://download.sublimetext.com/sublime-text_build-{}_amd64.deb
 output = 'sublime_text_{}.deb'.format(build)
 
 # TODO: this directory needs to be already there
-output_dir = '../bin/{}'.format(output)
+output_dir = '/home/{}/Dev/dotfiles/bin/{}'.format(USER, output)
 if not DEBUG:
 	urllib.request.urlretrieve(download_url, output_dir)
 	print('downloading subl to {}'.format(output) )
