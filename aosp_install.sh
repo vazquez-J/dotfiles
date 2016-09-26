@@ -31,3 +31,5 @@ add env variable $ANDROID_NDK_HOME or add ndk.dir to local.properties
 
 export ANDROID_NDK_HOME=/home/$USER/.local/share/...
 
+# References 
+# https://www.shaneenishry.com/blog/2013/11/26/android-ndk-programming-part-i/
