@@ -16,8 +16,10 @@
 5. Add udev rules for android usb devices -> $ wget -S -O - http://source.android.com/source/51-android.rules | sed "s/<username>/$USER/" | sudo tee >/dev/null /etc/udev/rules.d/51-android.rules; sudo udevadm control --reload-rules
 
 6. Set up firefox settings to minimize disk writes 
-
-
+   - Need to automate this
+   - about:config
+   - browser.sessionstore.interval. Default set to 15 seconds change to 30m
+   - 1d = 86400000 ms
 
 # References
 
