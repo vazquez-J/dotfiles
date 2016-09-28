@@ -4,6 +4,7 @@
 [core]
 	editor = vim
 	excludesfile = /home/user/.gitignore
+	fileMode = true
 
 [credential]
 	helper = cache --timeout=36000
