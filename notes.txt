@@ -14,3 +14,11 @@
 4. change firefoxs in about:config - layout.css.devPixelsPerPx
 
 5. Add udev rules for android usb devices -> $ wget -S -O - http://source.android.com/source/51-android.rules | sed "s/<username>/$USER/" | sudo tee >/dev/null /etc/udev/rules.d/51-android.rules; sudo udevadm control --reload-rules
+
+6. Set up firefox settings to minimize disk writes 
+
+
+
+# References
+
+[6] https://www.servethehome.com/firefox-is-eating-your-ssd-here-is-how-to-fix-it/
