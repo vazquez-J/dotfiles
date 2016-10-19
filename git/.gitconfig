@@ -12,3 +12,7 @@
 	guitool = meld
 [color]
 	ui = auto
+[merge]
+	tool = meld
+[mergetool]
+	keepBackup =
