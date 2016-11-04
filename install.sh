@@ -34,6 +34,10 @@ echo " Linking bashrc"
 ln -sv -f ${BASEDIR}/bash/.bashrc ~/.bashrc
 echo ""
 
+#atom
+echo " Linking atom directory"
+ln -svf ${BASEDIR}/atom /home/$user/.atom
+
 #subl
 echo " Linking Python3 sublime build"
 ln -sv -f ${BASEDIR}/subl/Python3.sublime-build /home/$USER/.config/sublime-text-3/Packages/User/Python3.sublime-build
@@ -79,14 +83,14 @@ function subl {
 #ADD
 #/home/rvazquez/.config/sublime-text-3/Packages/User/C++11.sublime-build
 
-# Install with apt this is for i3 stuff 
+# Install with apt this is for i3 stuff
 
 # echo "Diverting ack exe"
 # sudo dpkg-divert --local --divert /usr/bin/ack --rename --add /usr/bin/ack-grep
 # to remove diversion sudo dpkg-divert --remove /usr/bin/ack-grep
 
 # Install for i3 stuff
-# sudo apt install -qq  rofi 
+# sudo apt install -qq  rofi
 
 # ln -sv -f ${BASEDIR}/i3Pystatus/config.py --> can run directly from dotfiles dir
 
