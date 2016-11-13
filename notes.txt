@@ -20,6 +20,7 @@
    - about:config
    - browser.sessionstore.interval. Default set to 15 seconds change to 30m
    - 1d = 86400000 ms
+7. Wireshark - http://askubuntu.com/questions/74059/how-do-i-run-wireshark-with-root-privileges
 
 # References
 
