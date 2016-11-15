@@ -14,3 +14,4 @@
 4. change firefoxs in about:config - layout.css.devPixelsPerPx
 
 5. Install grafana http://docs.grafana.org/installation/debian/
+5. Add udev rules for android usb devices -> $ wget -S -O - http://source.android.com/source/51-android.rules | sed "s/<username>/$USER/" | sudo tee >/dev/null /etc/udev/rules.d/51-android.rules; sudo udevadm control --reload-rules

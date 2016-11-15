@@ -2,13 +2,32 @@
 #REF: http://www.anishathalye.com/2014/08/03/managing-your-dotfiles/
 #REF: https://realpython.com/blog/python/setting-up-sublime-text-3-for-full-stack-python-development/
 
+echo 'Installing python specific packages...'
+sudo apt install -qq -y python-dev python-pip python3-pip python-setuptools
+sleep 2
+
 echo 'Installing packages...'
 sleep 2
-sudo apt install -qq -y  xbacklight redshift git vim spotify-client meld build-essential ack-grep geoclue-2.0
+sudo apt install -qq -y  zip xbacklight redshift git vim spotify-client meld build-essential ack-grep geoclue-2.0
+
+echo 'Removing packages...'
 sudo apt purge -y pidgeon thunderbird brasero
 
 BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 echo $BASEDIR
+
+
+# TODO: virtualenv setup
+# if directoy not present create directory
+# ln -sv -f ${BASEDIR}/ack/.ackrc ~
+# sleep 5
+# echo ""
+
+# Linking GDB 
+echo " Linking gdbinit"
+ln -svf ${BASEDIR}/gdb/.gdbinit ~
+sleep 4
+echo ""
 
 #ack https://www.digitalocean.com/community/tutorials/how-to-install-and-use-ack-a-grep-replacement-for-developers-on-ubuntu-14-04
 echo " Linking ackrc"
@@ -64,17 +83,13 @@ echo ""
 # ln -sv -f ${BASEDIR}/i3/config /home/$USER/.config/i3/config
 
 #Install subl
-# create bin dire
-
-function subl {
-	if [ -f ${BASEDIR}/bin/sublime_text_*.deb ]; then
-		echo "deb file found"
-		echo "Installing ..."
-		gdebi ${BASEDIR}/bin/sublime_text_*.deb
-	else
-		echo "deb not found"
-	fi
-}
+if test -e /home/user/Dev/dotfiles/bin/sublime_text_*.deb; then
+  echo "Sublime text already installed" >&2
+else
+  echo "Running sublime text installer " >&2
+  python3 /home/user/Dev/dotfiles/scripts/sublime_downloader.py && sudo gdebi ./bin/*.deb
+  exit 1
+fi
 
 #Check for deb package
 #If deb package downloaded dpkg -i it
@@ -95,9 +110,12 @@ function subl {
 # ln -sv -f ${BASEDIR}/i3Pystatus/config.py --> can run directly from dotfiles dir
 
 # Add UDEV
-# Android udev rules
+# Android udev rules wget -S -O - http://source.android.com/source/51-android.rules | sed "s/<username>/$USER/" | sudo tee >/dev/null /etc/udev/rules.d/51-android.rules; sudo udevadm control --reload-rules
 
 # ln -s -f ${BASEDIR}
 # ln -s -f ${BASEDIR}
 # ln -s -f ${BASEDIR}
 # ln -s -f ${BASEDIR}
+
+# TODO:
+# 1. Add package control to SUBL
