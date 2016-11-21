@@ -18,59 +18,63 @@ echo $BASEDIR
 
 
 # TODO: virtualenv setup
-# if directoy not present create directory
 # ln -sv -f ${BASEDIR}/ack/.ackrc ~
 # sleep 5
 # echo ""
+# if directoy not present create directory
 
-# Linking GDB 
+# Linking GDB
 echo " Linking gdbinit"
-ln -svf ${BASEDIR}/gdb/.gdbinit ~
+ln -svf "${BASEDIR}/gdb/.gdbinit" ~
 sleep 4
 echo ""
 
 #ack https://www.digitalocean.com/community/tutorials/how-to-install-and-use-ack-a-grep-replacement-for-developers-on-ubuntu-14-04
 echo " Linking ackrc"
-ln -sv -f ${BASEDIR}/ack/.ackrc ~
+ln -sv -f "${BASEDIR}/ack/.ackrc" ~
 sleep 5
 echo ""
 
 #vim
 echo " Linking .vimrc"
-ln -sv -f ${BASEDIR}/.vimrc ~/.vimrc
+ln -sv -f "${BASEDIR}/.vimrc" ~/.vimrc
 sleep 5
 echo ""
 
 #git
 echo " Linking glob gitconfig and gitignore"
-ln -sv -f ${BASEDIR}/git/.gitignore ~/.gitignore
-ln -sv -f ${BASEDIR}/git/.gitconfig ~/.gitconfig
+ln -sv -f "${BASEDIR}/git/.gitignore" ~/.gitignore
+ln -sv -f "${BASEDIR}/git/.gitconfig" ~/.gitconfig
 sleep 5
 echo ""
 
 #bashrc
 echo " Linking bashrc"
-ln -sv -f ${BASEDIR}/bash/.bashrc ~/.bashrc
+ln -sv -f "${BASEDIR}/bash/.bashrc" ~/.bashrc
 echo ""
+
+#atom
+echo " Linking atom directory"
+ln -svf "${BASEDIR}/atom" /home/$USER/.atom
 
 #subl
 echo " Linking Python3 sublime build"
-ln -sv -f ${BASEDIR}/subl/Python3.sublime-build /home/$USER/.config/sublime-text-3/Packages/User/Python3.sublime-build
+ln -sv -f "${BASEDIR}/subl/Python3.sublime-build" /home/$USER/.config/sublime-text-3/Packages/User/Python3.sublime-build
 sleep 5
 echo ""
 
 echo " Linking Python sublime settings"
-ln -svf   ${BASEDIR}/subl/Python.sublime-settings /home/$USER/.config/sublime-text-3/Packages/User/Python.sublime-settings
+ln -svf "${BASEDIR}/subl/Python.sublime-settings" /home/$USER/.config/sublime-text-3/Packages/User/Python.sublime-settings
 sleep 5
 echo ""
 
 echo " Linking redshift.conf"
-sudo ln -svf   ${BASEDIR}/redshift/redshift.conf ~/.config/redshift.conf
+sudo ln -svf "${BASEDIR}/redshift/redshift.conf" ~/.config/redshift.conf
 sleep 5
 echo ""
 
 echo " Linking geoclue.conf"
-sudo ln -svf   ${BASEDIR}/geoclue.conf /etc/geoclue/geoclue.conf
+sudo ln -svf "${BASEDIR}/geoclue.conf" /etc/geoclue/geoclue.conf
 sleep 5
 echo ""
 # sudo ln -svf spotify.desktop /usr/share/applications/spotify.desktop
@@ -94,14 +98,14 @@ fi
 #ADD
 #/home/rvazquez/.config/sublime-text-3/Packages/User/C++11.sublime-build
 
-# Install with apt this is for i3 stuff 
+# Install with apt this is for i3 stuff
 
 # echo "Diverting ack exe"
 # sudo dpkg-divert --local --divert /usr/bin/ack --rename --add /usr/bin/ack-grep
 # to remove diversion sudo dpkg-divert --remove /usr/bin/ack-grep
 
 # Install for i3 stuff
-# sudo apt install -qq  rofi 
+# sudo apt install -qq  rofi
 
 # ln -sv -f ${BASEDIR}/i3Pystatus/config.py --> can run directly from dotfiles dir
 
