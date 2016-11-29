@@ -20,3 +20,10 @@ set nocompatible
 set smarttab
 set backspace=indent,eol,start
 filetype on
+syntax on
+filetype indent plugin on
+
+
+" Other stuff from videos etc
+" remap caps lock to esc
+
