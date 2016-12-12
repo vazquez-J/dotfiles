@@ -11,8 +11,9 @@ show_menu(){
     RED_TEXT=`echo "\033[31m"`
     ENTER_LINE=`echo "\033[33m"`
     echo -e "${MENU}*********************************************${NORMAL}"
-    echo -e "${MENU}**${NUMBER} 1)${MENU} Install Python specific packages ${NORMAL}"
-    echo -e "${MENU}**${NUMBER} 2)${MENU} Remove packages ${NORMAL}"
+    echo -e "${MENU}**${NUMBER} 1)${MENU} Install APT packages ${NORMAL}"
+    echo -e "${MENU}**${NUMBER} 2)${MENU} Install Python packages ${NORMAL}"
+	echo -e "${MENU}**${NUMBER} 2)${MENU} Remove packages ${NORMAL}"
     echo -e "${MENU}**${NUMBER} 3)${MENU} Link vimrc ${NORMAL}"
     echo -e "${MENU}**${NUMBER} 4)${MENU} Link gdb init ${NORMAL}"
     echo -e "${MENU}**${NUMBER} 5)${MENU} Link ackrc ${NORMAL}"
@@ -33,6 +34,7 @@ function apt_packages(){
     echo 'Installing packages...'
     sleep 2
     sudo apt install -qq -y  zip xbacklight redshift git vim spotify-client meld build-essential ack-grep geoclue-2.0
+	
 }
 
 
@@ -98,6 +100,11 @@ function bashrc(){
     ln -svf "${BASEDIR}/bash/.bashrc" ~/.bashrc
 }
 
+function divert_ack() {
+	sudo dpkg-divert --local --divert /usr/bin/ack --rename --add /usr/bin/ack-grep
+	# to remove diversion sudo dpkg-divert --remove /usr/bin/ack-grep
+}
+
 function atom(){
     echo " Linking atom directory"
     ln -svf "${}BASEDIR}/atom" "/home/$USER/.atom"
@@ -132,6 +139,7 @@ function geoclue() {
 # #i3-wm i3Pystatus
 # # ln -sv -f ${B}ASEDIR}/i3/config /home/$USER/.config/i3/config
 # }
+
 function option_picked() {
     COLOR='\033[01;31m' # bold red
     RESET='\033[00;00m' # normal white
@@ -152,15 +160,18 @@ while [ opt != '' ]
         case $opt in
 
         1) clear;
-        option_picked "Installing Py Packages";
-		apt_packages;
+        option_picked "Installing Apt Packages";
+			apt_packages;
 		option_picked "Operation Done!";
-        	exit;
-        	;;
+		option_picked "Now fixing ack";
+			divert_ack;
+		option_picked "Done!"
+        exit;
+        ;;
 
         2) clear;
-		option_picked "Removing Packages";
-        	remove_packages
+		option_picked "Installing Python Packages";
+        	py_packages;
 		option_picked "Operation Done!";
 		exit;
             	;;
@@ -177,7 +188,7 @@ while [ opt != '' ]
         	gdb_init
 		option_picked "Operation Done!";
 		exit;
-            	;;
+        ;;
 
     	5) clear;
 		option_picked "Linking ackrc";
@@ -191,29 +202,32 @@ while [ opt != '' ]
         	git_configs;
 		option_picked "Operation Done!";
 		exit;
-	    	;;
-	7) clear;
+	    ;;
+
+		7) clear;
 		option_picked "Linking GeoClue config"
-		geoclue();
+			geoclue;
 		option_picked "Operation Done!";
 		exit;
 		;;
 
-	8) clear;
+		8) clear;
 		option_picked "Linking bashrc"
-		bashrc();
+		bashrc;
 		option_picked "Operation Done!";
 		exit;
 		;;
 
-	7) clear;
+		9) clear;
+		;;
+
         x)exit;
         ;;
 
-	q)
-    clear;
-    exit;
-	;;
+		q)
+	    clear;
+	    exit;
+		;;
 
         \n)exit;
         ;;
@@ -227,22 +241,5 @@ fi
 done
 }
 
-
-#ADD
-#/home/rvazquez/.config/sublime-text-3/Packages/User/C++11.sublime-build
-
-# Install with apt this is for i3 stuff
-
-# echo "Diverting ack exe"
-# sudo dpkg-divert --local --divert /usr/bin/ack --rename --add /usr/bin/ack-grep
-# to remove diversion sudo dpkg-divert --remove /usr/bin/ack-grep
-
-# Install for i3 stuff
-# sudo apt install -qq  rofi
-
-# ln -sv -f ${BASEDIR}/i3Pystatus/config.py --> can run directly from dotfiles dir
-
-# Add UDEV
-# Android udev rules wget -S -O - http://source.android.com/source/51-android.rules | sed "s/<username>/$USER/" | sudo tee >/dev/null /etc/udev/rules.d/51-android.rules; sudo udevadm control --reload-rules
 
 init_function;
