@@ -11,8 +11,9 @@ show_menu(){
     RED_TEXT=`echo "\033[31m"`
     ENTER_LINE=`echo "\033[33m"`
     echo -e "${MENU}*********************************************${NORMAL}"
-    echo -e "${MENU}**${NUMBER} 1)${MENU} Install Python specific packages ${NORMAL}"
-    echo -e "${MENU}**${NUMBER} 2)${MENU} Remove packages ${NORMAL}"
+    echo -e "${MENU}**${NUMBER} 1)${MENU} Install APT packages ${NORMAL}"
+    echo -e "${MENU}**${NUMBER} 2)${MENU} Install Python packages ${NORMAL}"
+	echo -e "${MENU}**${NUMBER} 2)${MENU} Remove packages ${NORMAL}"
     echo -e "${MENU}**${NUMBER} 3)${MENU} Link vimrc ${NORMAL}"
     echo -e "${MENU}**${NUMBER} 4)${MENU} Link gdb init ${NORMAL}"
     echo -e "${MENU}**${NUMBER} 5)${MENU} Link ackrc ${NORMAL}"
@@ -33,6 +34,20 @@ function apt_packages(){
     echo 'Installing packages...'
     sleep 2
     sudo apt install -qq -y  zip xbacklight redshift git vim spotify-client meld build-essential ack-grep geoclue-2.0
+	
+}
+
+
+function py_packages(){
+    echo 'Installing python specific packages...'
+    sudo apt install -qq -y --force-yes python-dev python-pip python3-pip python-setuptools python3-setuptools python3-wheel python3-dev
+    sleep 2
+}
+
+
+function remove_packages(){
+    echo 'Removing unneeded packages...'
+    sudo apt purge -y --force-yes pidgin thunderbird brasero
 }
 
 function download_sublime() {
@@ -47,7 +62,7 @@ function download_sublime() {
 
 function remove_packages(){
     echo 'Removing unneeded packages...'
-    sudo apt purge -y --force-yes pidgeon thunderbird brasero
+    sudo apt purge -y --force-yes pidgin thunderbird brasero
 }
 
 function vimrc(){
@@ -85,6 +100,11 @@ function bashrc(){
     ln -svf "${BASEDIR}/bash/.bashrc" ~/.bashrc
 }
 
+function divert_ack() {
+	sudo dpkg-divert --local --divert /usr/bin/ack --rename --add /usr/bin/ack-grep
+	# to remove diversion sudo dpkg-divert --remove /usr/bin/ack-grep
+}
+
 function atom(){
     echo " Linking atom directory"
     ln -svf "${}BASEDIR}/atom" "/home/$USER/.atom"
@@ -120,12 +140,6 @@ function geoclue() {
 # # ln -sv -f ${B}ASEDIR}/i3/config /home/$USER/.config/i3/config
 # }
 
-function py_packages(){
-    echo 'Installing python specific packages...'
-    sudo apt install -qq -y --force-yes python-dev python-pip python3-pip python-setuptools
-    sleep 2
-}
-
 function option_picked() {
     COLOR='\033[01;31m' # bold red
     RESET='\033[00;00m' # normal white
@@ -146,53 +160,74 @@ while [ opt != '' ]
         case $opt in
 
         1) clear;
-        option_picked "Installing Py Packages";
-		apt_packages;
+        option_picked "Installing Apt Packages";
+			apt_packages;
 		option_picked "Operation Done!";
+		option_picked "Now fixing ack";
+			divert_ack;
+		option_picked "Done!"
         exit;
         ;;
 
         2) clear;
-		option_picked "Removing Packages";
-        remove_packages
+		option_picked "Installing Python Packages";
+        	py_packages;
 		option_picked "Operation Done!";
 		exit;
-            ;;
+            	;;
 
         3) clear;
 		option_picked "Linking vimrc";
-        vimrc;
+        	vimrc;
 		option_picked "Operation Done!";
 		exit;
-            ;;
+            	;;
 
         4) clear;
 		option_picked "Linking GDB init";
-        gdb_init
+        	gdb_init
 		option_picked "Operation Done!";
 		exit;
-            ;;
+        ;;
 
     	5) clear;
 		option_picked "Linking ackrc";
-        ackrc;
+        	ackrc;
 		option_picked "Operation Done!";
 		exit;
 		;;
 
     	6) clear;
 		option_picked "Linking git configs";
-        git_configs;
+        	git_configs;
 		option_picked "Operation Done!";
 		exit;
 	    ;;
+
+		7) clear;
+		option_picked "Linking GeoClue config"
+			geoclue;
+		option_picked "Operation Done!";
+		exit;
+		;;
+
+		8) clear;
+		option_picked "Linking bashrc"
+		bashrc;
+		option_picked "Operation Done!";
+		exit;
+		;;
+
+		9) clear;
+		;;
+
         x)exit;
         ;;
 
-	q)
-    clear;
-    exit;
-	;;
+		q)
+	    clear;
+	    exit;
+		;;
 
         \n)exit;
         ;;
@@ -206,22 +241,5 @@ fi
 done
 }
 
-
-#ADD
-#/home/rvazquez/.config/sublime-text-3/Packages/User/C++11.sublime-build
-
-# Install with apt this is for i3 stuff
-
-# echo "Diverting ack exe"
-# sudo dpkg-divert --local --divert /usr/bin/ack --rename --add /usr/bin/ack-grep
-# to remove diversion sudo dpkg-divert --remove /usr/bin/ack-grep
-
-# Install for i3 stuff
-# sudo apt install -qq  rofi
-
-# ln -sv -f ${BASEDIR}/i3Pystatus/config.py --> can run directly from dotfiles dir
-
-# Add UDEV
-# Android udev rules wget -S -O - http://source.android.com/source/51-android.rules | sed "s/<username>/$USER/" | sudo tee >/dev/null /etc/udev/rules.d/51-android.rules; sudo udevadm control --reload-rules
 
 init_function;
