@@ -127,5 +127,7 @@ fi
 ## RV 
 export PROMPT_COMMAND="history -a; history -n"
 export WORKON_HOME=$HOME/.virtualenvs
+# For android builds
+export USE_CCACHE=1
 
 source /usr/local/bin/virtualenvwrapper_lazy.sh
