@@ -23,6 +23,9 @@
    - 1d = 86400000 ms
 7. Wireshark - http://askubuntu.com/questions/74059/how-do-i-run-wireshark-with-root-privileges
 
+8. Add vundle and vimr rc
+
 # References
 
-[6] https://www.servethehome.com/firefox-is-eating-your-ssd-here-is-how-to-fix-it/
+[6] - https://www.servethehome.com/firefox-is-eating-your-ssd-here-is-how-to-fix-it/
+[8] - http://unlogic.co.uk/2013/02/08/vim-as-a-python-ide/
