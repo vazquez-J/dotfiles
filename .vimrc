@@ -17,6 +17,7 @@ Plugin 'VundleVim/Vundle.vim'
 "
 Plugin 'wakatime/vim-wakatime'
 Bundle 'scrooloose/nerdtree'
+" Bundle 'klen/python-mode'
 call vundle#end()            " required
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
