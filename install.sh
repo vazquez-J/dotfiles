@@ -32,7 +32,7 @@ show_menu(){
 
 function vundle(){
 	echo 'Installing vundle'
-	git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+	git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/Vundle.vim
 }
 
 function apt_packages(){
