@@ -30,6 +30,11 @@ show_menu(){
     read opt
 }
 
+function vundle(){
+	echo 'Installing vundle'
+	git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+}
+
 function apt_packages(){
     echo 'Installing packages...'
     sleep 2
@@ -68,6 +73,8 @@ function remove_packages(){
 function vimrc(){
     ln -sv -f "${BASEDIR}/.vimrc" ~/.vimrc
     sleep 5
+    echo 'Cloning vundle'
+    vundle;
 }
 
 function venv(){

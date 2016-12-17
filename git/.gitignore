@@ -11,3 +11,6 @@
 *.pyc
 *.__pycache__
 *.orig
+
+# Local bin files
+bin/

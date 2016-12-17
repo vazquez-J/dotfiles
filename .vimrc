@@ -1,5 +1,6 @@
+" VUNDLE "
 set nocompatible              " be iMproved, required
-filetype off                  " required
+filetype off                  " required for Vundle
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -53,3 +54,9 @@ set title
 set nocompatible
 set smarttab
 set backspace=indent,eol,start
+syntax on
+
+
+" Other stuff from videos etc
+" remap caps lock to esc
+

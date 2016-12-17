@@ -7,36 +7,25 @@
 
 	sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 94558F59
 
-2. Apt packages 
+2. apt-get install git vim redshift python3-dev python-pip python3-pip build-essential virtualenvwrapper
 
 3. apt-get purge pidgeon thunderbird brasero
 
 4. change firefoxs in about:config - layout.css.devPixelsPerPx
 
 5. Install grafana http://docs.grafana.org/installation/debian/
+5. Add udev rules for android usb devices -> $ wget -S -O - http://source.android.com/source/51-android.rules | sed "s/<username>/$USER/" | sudo tee >/dev/null /etc/udev/rules.d/51-android.rules; sudo udevadm control --reload-rules
 
-6. Add udev rules for android usb devices -> $ wget -S -O - http://source.android.com/source/51-android.rules | sed "s/<username>/$USER/" | sudo tee >/dev/null /etc/udev/rules.d/51-android.rules; sudo udevadm control --reload-rules
+6. Set up firefox settings to minimize disk writes 
+   - Need to automate this
+   - about:config
+   - browser.sessionstore.interval. Default set to 15 seconds change to 30m
+   - 1d = 86400000 ms
+7. Wireshark - http://askubuntu.com/questions/74059/how-do-i-run-wireshark-with-root-privileges
 
-7. Add Vundle to vim
+8. Add vundle and vimr rc
 
-8. Add SSD optimization options to fstab entry
+# References
 
-
-
-#ADD
-#/home/rvazquez/.config/sublime-text-3/Packages/User/C++11.sublime-build
-
-# Install with apt this is for i3 stuff
-
-
-# Install for i3 stuff
-# sudo apt install -qq  rofi
-
-# ln -sv -f ${BASEDIR}/i3Pystatus/config.py --> can run directly from dotfiles dir
-
-# Add UDEV
-# Android udev rules wget -S -O - http://source.android.com/source/51-android.rules | sed "s/<username>/$USER/" | sudo tee >/dev/null /etc/udev/rules.d/51-android.rules; sudo udevadm control --reload-rules
-
-
-References:
-[7] - https://github.com/VundleVim/Vundle.vim
+[6] - https://www.servethehome.com/firefox-is-eating-your-ssd-here-is-how-to-fix-it/
+[8] - http://unlogic.co.uk/2013/02/08/vim-as-a-python-ide/
