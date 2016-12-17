@@ -1,23 +1,15 @@
-" VUNDLE "
-set nocompatible              " be iMproved, required
+""""""""""""""""""""""""""" VUNDLE """"""""""""""""""""""""""""""""""""""""""""""""""""
+set nocompatible              " Turns off compat with older vi
 filetype off                  " required for Vundle
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
 
-" let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-
-" The following are examples of different formats supported.
-" Keep Plugin commands between vundle#begin/end.
-
-" All of your Plugins must be added before the following line
-"
 Plugin 'wakatime/vim-wakatime'
-Bundle 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdtree'
 " Bundle 'klen/python-mode'
+
 call vundle#end()            " required
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
@@ -31,7 +23,10 @@ filetype plugin indent on    " required
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
+"
+"""""""""""""""""" BASE CONFIG """"""""""""""""""""""""""""""""""""""""
 
+filetype plugin indent on
 " For a sidepane
 map <F2> :NERDTreeToggle<CR>
 " Set indentation
