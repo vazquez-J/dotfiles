@@ -45,7 +45,7 @@ function apt_packages(){
 
 function py_packages(){
     echo 'Installing python specific packages...'
-    sudo apt install -qq -y --force-yes python-dev python-pip python3-pip python-setuptools python3-setuptools python3-wheel python3-dev
+    sudo apt install -qq -y --force-yes python-tk python-wheel python-dev python-pip python3-pip python-setuptools python3-setuptools python3-wheel python3-dev
     sleep 2
 }
 
