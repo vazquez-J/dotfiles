@@ -13,7 +13,7 @@ show_menu(){
     echo -e "${MENU}*********************************************${NORMAL}"
     echo -e "${MENU}**${NUMBER} 1)${MENU} Install APT packages ${NORMAL}"
     echo -e "${MENU}**${NUMBER} 2)${MENU} Install Python packages ${NORMAL}"
-	echo -e "${MENU}**${NUMBER} 2)${MENU} Remove packages ${NORMAL}"
+    echo -e "${MENU}**${NUMBER} 2)${MENU} Remove packages ${NORMAL}"
     echo -e "${MENU}**${NUMBER} 3)${MENU} Link vimrc ${NORMAL}"
     echo -e "${MENU}**${NUMBER} 4)${MENU} Link gdb init ${NORMAL}"
     echo -e "${MENU}**${NUMBER} 5)${MENU} Link ackrc ${NORMAL}"
@@ -174,14 +174,14 @@ while [ opt != '' ]
         case $opt in
 
         1) clear;
-        option_picked "Installing Apt Packages";
-			apt_packages;
+    		option_picked "Installing Apt Packages";
+		apt_packages;
 		option_picked "Operation Done!";
 		option_picked "Now fixing ack";
-			divert_ack;
+		divert_ack;
 		option_picked "Done!"
-        exit;
-        ;;
+      		exit;
+        	;;
 
         2) clear;
 		option_picked "Installing Python Packages";
@@ -202,7 +202,7 @@ while [ opt != '' ]
         	gdb_init
 		option_picked "Operation Done!";
 		exit;
-        ;;
+        	;;
 
     	5) clear;
 		option_picked "Linking ackrc";
@@ -216,31 +216,31 @@ while [ opt != '' ]
         	git_configs;
 		option_picked "Operation Done!";
 		exit;
-	    ;;
+	    	;;
 
-		7) clear;
+	7) clear;
 		option_picked "Linking GeoClue config"
-			geoclue;
+		geoclue;
 		option_picked "Operation Done!";
 		exit;
 		;;
 
-		8) clear;
+	8) clear;
 		option_picked "Linking bashrc"
 		bashrc;
 		option_picked "Operation Done!";
 		exit;
 		;;
 
-		9) clear;
+	9) clear;
 		;;
 
-        x)exit;
-        ;;
+        x)
+		exit;
+        	;;
 
-		q)
-	    clear;
-	    exit;
+	q)clear;
+		exit;
 		;;
 
         \n)exit;
