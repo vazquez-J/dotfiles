@@ -46,7 +46,7 @@ function vbox_install(){
 function apt_packages(){
     echo 'Installing packages...'
     sleep 2
-    sudo apt install -qq -y  zip xbacklight redshift git vim spotify-client meld build-essential ack-grep geoclue-2.0
+    sudo apt install -qq -y  shellcheck zip xbacklight redshift git vim spotify-client meld build-essential ack-grep geoclue-2.0
 	
 }
 
