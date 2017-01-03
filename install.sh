@@ -240,6 +240,34 @@ while [ opt != '' ]
 		exit;
 		;;
 
+    	10) clear;
+		option_picked "Linking Python Subl Build";
+	        git_configs;
+		option_picked "Operation Done!";
+		exit;
+	    	;;
+
+    	11) clear;
+		option_picked "Linking redshift configs";
+	        redshift_config;
+		option_picked "Operation Done!";
+		exit;
+	    	;;
+
+    	12) clear;
+		option_picked "Spotify";
+	        spotify;
+		option_picked "Operation Done!";
+		exit;
+	    	;;
+
+    	13) clear;
+		option_picked "Linking Python Subl Settings";
+	        py_sublime_settings;
+		option_picked "Operation Done!";
+		exit;
+	    	;;
+
 	10) clear;
 		;;
 
