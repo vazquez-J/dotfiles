@@ -175,56 +175,56 @@ while [ opt != '' ]
         case $opt in
 
         1) clear;
-    	option_picked "Installing Apt Packages";
+    		option_picked "Installing Apt Packages";
 		apt_packages;
 		option_picked "Operation Done!";
 		option_picked "Now fixing ack";
 		divert_ack;
 		option_picked "Done!"
-      	exit;
-        ;;
+      		exit;
+        	;;
 
         2) clear;
 		option_picked "Installing Python Packages";
-        py_packages;
+        	py_packages;
 		option_picked "Operation Done!";
 		exit;
-        ;;
+        	;;
 
         3) clear;
 		option_picked "Installing Python Packages";
-        remove_packages;
+        	remove_packages;
 		option_picked "Operation Done!";
 		exit;
-        ;;
+        	;;
 
         4) clear;
 		option_picked "Linking vimrc";
-        vimrc;
+        	vimrc;
 		option_picked "Operation Done!";
 		exit;
-        ;;
+        	;;
 
         5) clear;
 		option_picked "Linking GDB init";
-        gdb_init
+        	gdb_init;
 		option_picked "Operation Done!";
 		exit;
-        ;;
+        	;;
 
     	6) clear;
 		option_picked "Linking ackrc";
-        ackrc;
+        	ackrc;
 		option_picked "Operation Done!";
 		exit;
 		;;
 
     	7) clear;
 		option_picked "Linking git configs";
-        git_configs;
+	        git_configs;
 		option_picked "Operation Done!";
 		exit;
-	    ;;
+	    	;;
 
     	8) clear;
 		option_picked "Linking bashrc config"
@@ -240,14 +240,14 @@ while [ opt != '' ]
 		exit;
 		;;
 
-	    10) clear;
+	10) clear;
 		;;
 
         x)
 		exit;
         	;;
 
-	    q)clear;
+	q) clear;
 		exit;
 		;;
 
