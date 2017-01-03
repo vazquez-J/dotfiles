@@ -36,7 +36,8 @@ function vundle(){
 }
 
 function vbox_install(){
-	sudo sh -c "echo 'deb http://download.virtualbox.org/virtualbox/debian xenial contrib' > /etc/apt/sources.list.d/virtualbox.list" && \
+	sudo sh -c "echo 'deb http://download.virtualbox.org/virtualbox/debian xenial contrib' \
+	> /etc/apt/sources.list.d/virtualbox.list" && \
 	wget -q http://download.virtualbox.org/virtualbox/debian/oracle_vbox.asc -O- | sudo apt-key add - && \
 	sudo apt-get update && \
 	sudo apt-get install virtualbox-5.1
@@ -226,8 +227,8 @@ while [ opt != '' ]
 	    ;;
 
     	8) clear;
-		option_picked "Linking GeoClue config"
-		geoclue;
+		option_picked "Linking bashrc config"
+		bashrc;
 		option_picked "Operation Done!";
 		exit;
 		;;
