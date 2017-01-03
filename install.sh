@@ -13,14 +13,14 @@ show_menu(){
     echo -e "${MENU}*********************************************${NORMAL}"
     echo -e "${MENU}**${NUMBER} 1)${MENU} Install APT packages ${NORMAL}"
     echo -e "${MENU}**${NUMBER} 2)${MENU} Install Python packages ${NORMAL}"
-    echo -e "${MENU}**${NUMBER} 2)${MENU} Remove packages ${NORMAL}"
-    echo -e "${MENU}**${NUMBER} 3)${MENU} Link vimrc ${NORMAL}"
-    echo -e "${MENU}**${NUMBER} 4)${MENU} Link gdb init ${NORMAL}"
-    echo -e "${MENU}**${NUMBER} 5)${MENU} Link ackrc ${NORMAL}"
-    echo -e "${MENU}**${NUMBER} 6)${MENU} Link git configs ${NORMAL}"
-    echo -e "${MENU}**${NUMBER} 7)${MENU} Link bashrc ${NORMAL}"
-    echo -e "${MENU}**${NUMBER} 8)${MENU} Link atom config ${NORMAL}"
-    echo -e "${MENU}**${NUMBER} 9)${MENU} Link Python Subl Build ${NORMAL}"
+    echo -e "${MENU}**${NUMBER} 3)${MENU} Remove packages ${NORMAL}"
+    echo -e "${MENU}**${NUMBER} 4)${MENU} Link vimrc ${NORMAL}"
+    echo -e "${MENU}**${NUMBER} 5)${MENU} Link gdb init ${NORMAL}"
+    echo -e "${MENU}**${NUMBER} 6)${MENU} Link ackrc ${NORMAL}"
+    echo -e "${MENU}**${NUMBER} 7)${MENU} Link git configs ${NORMAL}"
+    echo -e "${MENU}**${NUMBER} 8)${MENU} Link bashrc ${NORMAL}"
+    echo -e "${MENU}**${NUMBER} 9)${MENU} Link atom config ${NORMAL}"
+    echo -e "${MENU}**${NUMBER} 10)${MENU} Link Python Subl Build ${NORMAL}"
     echo -e "${MENU}**${NUMBER} 11)${MENU} Link  redshift config ${NORMAL}"
     echo -e "${MENU}**${NUMBER} 12)${MENU} Spotify ${NORMAL}"
     echo -e "${MENU}**${NUMBER} 13)${MENU} Link  Python Subl Settings${NORMAL}"
@@ -191,48 +191,55 @@ while [ opt != '' ]
             	;;
 
         3) clear;
+		option_picked "Installing Python Packages";
+        remove_packages;
+		option_picked "Operation Done!";
+		exit;
+        ;;
+
+        4) clear;
 		option_picked "Linking vimrc";
         	vimrc;
 		option_picked "Operation Done!";
 		exit;
             	;;
 
-        4) clear;
+        5) clear;
 		option_picked "Linking GDB init";
         	gdb_init
 		option_picked "Operation Done!";
 		exit;
         	;;
 
-    	5) clear;
+    	6) clear;
 		option_picked "Linking ackrc";
         	ackrc;
 		option_picked "Operation Done!";
 		exit;
 		;;
 
-    	6) clear;
+    	7) clear;
 		option_picked "Linking git configs";
         	git_configs;
 		option_picked "Operation Done!";
 		exit;
 	    	;;
 
-	7) clear;
+	8) clear;
 		option_picked "Linking GeoClue config"
 		geoclue;
 		option_picked "Operation Done!";
 		exit;
 		;;
 
-	8) clear;
+	9) clear;
 		option_picked "Linking bashrc"
 		bashrc;
 		option_picked "Operation Done!";
 		exit;
 		;;
 
-	9) clear;
+	10) clear;
 		;;
 
         x)
