@@ -24,6 +24,7 @@ show_menu(){
     echo -e "${MENU}**${NUMBER} 11)${MENU} Link  redshift config ${NORMAL}"
     echo -e "${MENU}**${NUMBER} 12)${MENU} Spotify ${NORMAL}"
     echo -e "${MENU}**${NUMBER} 13)${MENU} Link  Python Subl Settings${NORMAL}"
+    echo -e "${MENU}**${NUMBER} 14)${MENU} Install VBOX${NORMAL}"
     echo -e "${MENU}*********************************************${NORMAL}"
     echo -e "${ENTER_LINE}Please enter a menu option and enter or ${RED_TEXT}enter to exit. ${NORMAL}"
     echo -e "${ENTER_LINE}Press q to exit ${RED_TEXT}enter to exit. ${NORMAL}"
@@ -64,11 +65,11 @@ function remove_packages(){
 }
 
 function download_sublime() {
-    if test -e /home/user/Dev/dotfiles/bin/sublime_text_*.deb; then
+    if test -e "/home/$USER/Dev/dotfiles/bin/sublime_text_*.deb"; then
         echo "Sublime text already installed" >&2
     else
         echo "Running sublime text installer " >&2
-        python3 /home/$USER/Dev/dotfiles/scripts/sublime_downloader.py && sudo gdebi ./bin/*.deb
+        python3 "/home/$USER/Dev/dotfiles/scripts/sublime_downloader.py" && sudo gdebi ./bin/*.deb
         exit 1
     fi
 }
@@ -264,6 +265,13 @@ while [ opt != '' ]
     	13) clear;
 		option_picked "Linking Python Subl Settings";
 	        py_sublime_settings;
+		option_picked "Operation Done!";
+		exit;
+	    	;;
+
+    	14) clear;
+		option_picked "Installing vbox";
+	        vbox_install;
 		option_picked "Operation Done!";
 		exit;
 	    	;;
