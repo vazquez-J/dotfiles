@@ -2,6 +2,8 @@
 #REF: http://www.anishathalye.com/2014/08/03/managing-your-dotfiles/
 #REF: https://realpython.com/blog/python/setting-up-sublime-text-3-for-full-stack-python-development/
 # TODO: Add a 'DO ALL  option'
+# TODO: Prep system for android studio install https://dl.google.com/dl/android/studio/ide-zips/2.2.3.0/android-studio-ide-145.3537739-linux.zip
+# https://developer.android.com/studio/install.html
 
 show_menu(){
     NORMAL=`echo "\033[m"`
@@ -30,13 +32,18 @@ show_menu(){
     echo -e "${ENTER_LINE}Press q to exit ${RED_TEXT}enter to exit. ${NORMAL}"
     read opt
 }
-
+function android_studio(){
+	sudo apt install -y libc6:i386 libncurses5:i386 libstdc++6:i386 lib32z1 libbz2-1.0:i386
+	sudo curl -L https://dl.google.com/dl/android/studio/ide-zips/2.2.3.0/android-studio-ide-145.3537739-linux.zip -o /opt/
+}
+	
 function vundle(){
 	echo 'Installing vundle'
 	git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/Vundle.vim
 }
 
 function vbox_install(){
+	#TODO: Add users to shared folders
 	sudo sh -c "echo 'deb http://download.virtualbox.org/virtualbox/debian xenial contrib' \
 	> /etc/apt/sources.list.d/virtualbox.list" && \
 	wget -q http://download.virtualbox.org/virtualbox/debian/oracle_vbox.asc -O- | sudo apt-key add - && \
@@ -80,10 +87,8 @@ function remove_packages(){
 }
 
 function vimrc(){
-    ln -sv -f "${BASEDIR}/.vimrc" ~/.vimrc
-    sleep 5
-    echo 'Cloning vundle'
-    vundle;
+    ln -sv -f "${BASEDIR}/vim/.vimrc" ~/.vimrc
+    sleep 4
 }
 
 function venv(){
