@@ -42,6 +42,12 @@ function vundle(){
 	git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/Vundle.vim
 }
 
+function vim-fugitive(){
+	echo 'Installing vim fugitive'
+	git clone git://github.com/tpope/vim-fugitive.git ~/.vim/bundle/vim-fugitive/
+	echo 'Done'
+}
+
 function vbox_install(){
 	#TODO: Add users to shared folders
 	sudo sh -c "echo 'deb http://download.virtualbox.org/virtualbox/debian xenial contrib' \
