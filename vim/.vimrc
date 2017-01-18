@@ -9,6 +9,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'wakatime/vim-wakatime'
 Plugin 'scrooloose/nerdtree'
 " Bundle 'klen/python-mode'
+Bundle 'tpope/vim-fugitive'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
