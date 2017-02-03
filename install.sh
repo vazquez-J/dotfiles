@@ -2,6 +2,8 @@
 #REF: http://www.anishathalye.com/2014/08/03/managing-your-dotfiles/
 #REF: https://realpython.com/blog/python/setting-up-sublime-text-3-for-full-stack-python-development/
 # TODO: Add a 'DO ALL  option'
+# TODO: Prep system for android studio install https://dl.google.com/dl/android/studio/ide-zips/2.2.3.0/android-studio-ide-145.3537739-linux.zip
+# https://developer.android.com/studio/install.html
 
 show_menu(){
     NORMAL=`echo "\033[m"`
@@ -13,6 +15,7 @@ show_menu(){
     echo -e "${MENU}*********************************************${NORMAL}"
     echo -e "${MENU}**${NUMBER} 1)${MENU} Install APT packages ${NORMAL}"
     echo -e "${MENU}**${NUMBER} 2)${MENU} Install Python packages ${NORMAL}"
+<<<<<<< HEAD
     echo -e "${MENU}**${NUMBER} 2)${MENU} Remove packages ${NORMAL}"
     echo -e "${MENU}**${NUMBER} 3)${MENU} Link vimrc ${NORMAL}"
     echo -e "${MENU}**${NUMBER} 4)${MENU} Link gdb init ${NORMAL}"
@@ -21,24 +24,54 @@ show_menu(){
     echo -e "${MENU}**${NUMBER} 7)${MENU} Link bashrc ${NORMAL}"
     echo -e "${MENU}**${NUMBER} 8)${MENU} Link atom config ${NORMAL}"
     echo -e "${MENU}**${NUMBER} 9)${MENU} Link Python Subl Build ${NORMAL}"
+=======
+    echo -e "${MENU}**${NUMBER} 3)${MENU} Remove packages ${NORMAL}"
+    echo -e "${MENU}**${NUMBER} 4)${MENU} Link vimrc ${NORMAL}"
+    echo -e "${MENU}**${NUMBER} 5)${MENU} Link gdb init ${NORMAL}"
+    echo -e "${MENU}**${NUMBER} 6)${MENU} Link ackrc ${NORMAL}"
+    echo -e "${MENU}**${NUMBER} 7)${MENU} Link git configs ${NORMAL}"
+    echo -e "${MENU}**${NUMBER} 8)${MENU} Link bashrc ${NORMAL}"
+    echo -e "${MENU}**${NUMBER} 9)${MENU} Link atom config ${NORMAL}"
+    echo -e "${MENU}**${NUMBER} 10)${MENU} Link Python Subl Build ${NORMAL}"
+>>>>>>> da299e3fcb2c530ebeaa7155f03a2f779fc99a04
     echo -e "${MENU}**${NUMBER} 11)${MENU} Link  redshift config ${NORMAL}"
     echo -e "${MENU}**${NUMBER} 12)${MENU} Spotify ${NORMAL}"
     echo -e "${MENU}**${NUMBER} 13)${MENU} Link  Python Subl Settings${NORMAL}"
+    echo -e "${MENU}**${NUMBER} 14)${MENU} Install VBOX${NORMAL}"
     echo -e "${MENU}*********************************************${NORMAL}"
     echo -e "${ENTER_LINE}Please enter a menu option and enter or ${RED_TEXT}enter to exit. ${NORMAL}"
     echo -e "${ENTER_LINE}Press q to exit ${RED_TEXT}enter to exit. ${NORMAL}"
     read opt
 }
-
+function android_studio(){
+	sudo apt install -y libc6:i386 libncurses5:i386 libstdc++6:i386 lib32z1 libbz2-1.0:i386
+	sudo curl -L https://dl.google.com/dl/android/studio/ide-zips/2.2.3.0/android-studio-ide-145.3537739-linux.zip -o /opt/
+}
+	
 function vundle(){
 	echo 'Installing vundle'
 	git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/Vundle.vim
 }
 
+function vim-fugitive(){
+	echo 'Installing vim fugitive'
+	git clone git://github.com/tpope/vim-fugitive.git ~/.vim/bundle/vim-fugitive/
+	echo 'Done'
+}
+
+function vbox_install(){
+	#TODO: Add users to shared folders
+	sudo sh -c "echo 'deb http://download.virtualbox.org/virtualbox/debian xenial contrib' \
+	> /etc/apt/sources.list.d/virtualbox.list" && \
+	wget -q http://download.virtualbox.org/virtualbox/debian/oracle_vbox.asc -O- | sudo apt-key add - && \
+	sudo apt-get update && \
+	sudo apt-get install virtualbox-5.1
+}
+
 function apt_packages(){
     echo 'Installing packages...'
     sleep 2
-    sudo apt install -qq -y  zip xbacklight redshift git vim spotify-client meld build-essential ack-grep geoclue-2.0
+    sudo apt install -qq -y  shellcheck zip xbacklight redshift git vim spotify-client meld build-essential ack-grep geoclue-2.0
 	
 }
 
@@ -56,11 +89,11 @@ function remove_packages(){
 }
 
 function download_sublime() {
-    if test -e /home/user/Dev/dotfiles/bin/sublime_text_*.deb; then
+    if test -e "/home/$USER/Dev/dotfiles/bin/sublime_text_*.deb"; then
         echo "Sublime text already installed" >&2
     else
         echo "Running sublime text installer " >&2
-        python3 /home/$USER/Dev/dotfiles/scripts/sublime_downloader.py && sudo gdebi ./bin/*.deb
+        python3 "/home/$USER/Dev/dotfiles/scripts/sublime_downloader.py" && sudo gdebi ./bin/*.deb
         exit 1
     fi
 }
@@ -71,10 +104,8 @@ function remove_packages(){
 }
 
 function vimrc(){
-    ln -sv -f "${BASEDIR}/.vimrc" ~/.vimrc
-    sleep 5
-    echo 'Cloning vundle'
-    vundle;
+    ln -sv -f "${BASEDIR}/vim/.vimrc" ~/.vimrc
+    sleep 4
 }
 
 function venv(){
@@ -167,58 +198,72 @@ while [ opt != '' ]
         case $opt in
 
         1) clear;
-        option_picked "Installing Apt Packages";
-			apt_packages;
+    		option_picked "Installing Apt Packages";
+		apt_packages;
 		option_picked "Operation Done!";
 		option_picked "Now fixing ack";
-			divert_ack;
+		divert_ack;
 		option_picked "Done!"
-        exit;
-        ;;
+      		exit;
+        	;;
 
         2) clear;
 		option_picked "Installing Python Packages";
         	py_packages;
 		option_picked "Operation Done!";
 		exit;
-            	;;
+        	;;
 
         3) clear;
+		option_picked "Installing Python Packages";
+        	remove_packages;
+		option_picked "Operation Done!";
+		exit;
+        	;;
+
+        4) clear;
 		option_picked "Linking vimrc";
         	vimrc;
 		option_picked "Operation Done!";
 		exit;
-            	;;
+        	;;
 
-        4) clear;
+        5) clear;
 		option_picked "Linking GDB init";
-        	gdb_init
+        	gdb_init;
 		option_picked "Operation Done!";
 		exit;
-        ;;
+        	;;
 
-    	5) clear;
+    	6) clear;
 		option_picked "Linking ackrc";
         	ackrc;
 		option_picked "Operation Done!";
 		exit;
 		;;
 
-    	6) clear;
+    	7) clear;
 		option_picked "Linking git configs";
-        	git_configs;
+	        git_configs;
 		option_picked "Operation Done!";
 		exit;
-	    ;;
+	    	;;
 
+<<<<<<< HEAD
 
 	7) clear;
 		option_picked "Linking GeoClue config"
 			geoclue;
+=======
+    	8) clear;
+		option_picked "Linking bashrc config"
+		bashrc;
+>>>>>>> da299e3fcb2c530ebeaa7155f03a2f779fc99a04
 		option_picked "Operation Done!";
 		exit;
 		;;
 
+<<<<<<< HEAD
 
 	11) clear;
 		option_picked "Linking redshift config"
@@ -229,21 +274,63 @@ while [ opt != '' ]
 
 
 	8) clear;
+=======
+    	9) clear;
+>>>>>>> da299e3fcb2c530ebeaa7155f03a2f779fc99a04
 		option_picked "Linking bashrc"
 		bashrc;
 		option_picked "Operation Done!";
 		exit;
 		;;
 
+<<<<<<< HEAD
 	9) clear;
+=======
+    	10) clear;
+		option_picked "Linking Python Subl Build";
+	        git_configs;
+		option_picked "Operation Done!";
+		exit;
+	    	;;
+
+    	11) clear;
+		option_picked "Linking redshift configs";
+	        redshift_config;
+		option_picked "Operation Done!";
+		exit;
+	    	;;
+
+    	12) clear;
+		option_picked "Spotify";
+	        spotify;
+		option_picked "Operation Done!";
+		exit;
+	    	;;
+
+    	13) clear;
+		option_picked "Linking Python Subl Settings";
+	        py_sublime_settings;
+		option_picked "Operation Done!";
+		exit;
+	    	;;
+
+    	14) clear;
+		option_picked "Installing vbox";
+	        vbox_install;
+		option_picked "Operation Done!";
+		exit;
+	    	;;
+
+	10) clear;
+>>>>>>> da299e3fcb2c530ebeaa7155f03a2f779fc99a04
 		;;
 
-        x)exit;
-        ;;
+        x)
+		exit;
+        	;;
 
-		q)
-	    clear;
-	    exit;
+	q) clear;
+		exit;
 		;;
 
         \n)exit;
