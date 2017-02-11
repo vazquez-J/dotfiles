@@ -7,9 +7,9 @@
 
 	sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 94558F59
 
-2. apt-get install git vim redshift python3-dev python-pip python3-pip build-essential virtualenvwrapper
+2. 
 
-3. apt-get purge pidgeon thunderbird brasero
+3.
 
 4. change firefoxs in about:config - layout.css.devPixelsPerPx
 
@@ -24,7 +24,7 @@
 7. Wireshark - http://askubuntu.com/questions/74059/how-do-i-run-wireshark-with-root-privileges
 
 8. Add vundle and vimr rc
-
+9. gdb init in dotfiles directory, is it properly linked? 
 # References
 
 [6] - https://www.servethehome.com/firefox-is-eating-your-ssd-here-is-how-to-fix-it/
