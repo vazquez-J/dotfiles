@@ -4,7 +4,6 @@
 *.doc
 *.docx
 *.txt
-*.png
 *.swp
 
 # Python
@@ -14,3 +13,6 @@
 
 # Local bin files
 bin/
+
+# IDE files
+.cproject
