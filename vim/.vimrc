@@ -57,3 +57,13 @@ syntax on
 " Other stuff from videos etc
 " remap caps lock to esc
 
+
+"""""""""""""""""" C/C++ specdific stuff """"""""""""""""""""""""""""""""""""
+augroup project
+	autocmd!
+	autocmd BufRead,BufNewFile *.h,*.c set filetype=c.doxygen
+augroup END
+
+" Set build system
+" set makeprg=clang\ -Wall\ -ggdb\
+" nnoremap <F4> :make!<cr>

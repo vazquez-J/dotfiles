@@ -15,6 +15,16 @@ show_menu(){
     echo -e "${MENU}*********************************************${NORMAL}"
     echo -e "${MENU}**${NUMBER} 1)${MENU} Install APT packages ${NORMAL}"
     echo -e "${MENU}**${NUMBER} 2)${MENU} Install Python packages ${NORMAL}"
+<<<<<<< HEAD
+    echo -e "${MENU}**${NUMBER} 2)${MENU} Remove packages ${NORMAL}"
+    echo -e "${MENU}**${NUMBER} 3)${MENU} Link vimrc ${NORMAL}"
+    echo -e "${MENU}**${NUMBER} 4)${MENU} Link gdb init ${NORMAL}"
+    echo -e "${MENU}**${NUMBER} 5)${MENU} Link ackrc ${NORMAL}"
+    echo -e "${MENU}**${NUMBER} 6)${MENU} Link git configs ${NORMAL}"
+    echo -e "${MENU}**${NUMBER} 7)${MENU} Link bashrc ${NORMAL}"
+    echo -e "${MENU}**${NUMBER} 8)${MENU} Link atom config ${NORMAL}"
+    echo -e "${MENU}**${NUMBER} 9)${MENU} Link Python Subl Build ${NORMAL}"
+=======
     echo -e "${MENU}**${NUMBER} 3)${MENU} Remove packages ${NORMAL}"
     echo -e "${MENU}**${NUMBER} 4)${MENU} Link vimrc ${NORMAL}"
     echo -e "${MENU}**${NUMBER} 5)${MENU} Link gdb init ${NORMAL}"
@@ -23,6 +33,7 @@ show_menu(){
     echo -e "${MENU}**${NUMBER} 8)${MENU} Link bashrc ${NORMAL}"
     echo -e "${MENU}**${NUMBER} 9)${MENU} Link atom config ${NORMAL}"
     echo -e "${MENU}**${NUMBER} 10)${MENU} Link Python Subl Build ${NORMAL}"
+>>>>>>> da299e3fcb2c530ebeaa7155f03a2f779fc99a04
     echo -e "${MENU}**${NUMBER} 11)${MENU} Link  redshift config ${NORMAL}"
     echo -e "${MENU}**${NUMBER} 12)${MENU} Spotify ${NORMAL}"
     echo -e "${MENU}**${NUMBER} 13)${MENU} Link  Python Subl Settings${NORMAL}"
@@ -238,20 +249,43 @@ while [ opt != '' ]
 		exit;
 	    	;;
 
+<<<<<<< HEAD
+
+	7) clear;
+		option_picked "Linking GeoClue config"
+			geoclue;
+=======
     	8) clear;
 		option_picked "Linking bashrc config"
 		bashrc;
+>>>>>>> da299e3fcb2c530ebeaa7155f03a2f779fc99a04
 		option_picked "Operation Done!";
 		exit;
 		;;
 
+<<<<<<< HEAD
+
+	11) clear;
+		option_picked "Linking redshift config"
+			redshift_config;
+		option_picked "Operation Done!";
+		exit;
+		;;
+
+
+	8) clear;
+=======
     	9) clear;
+>>>>>>> da299e3fcb2c530ebeaa7155f03a2f779fc99a04
 		option_picked "Linking bashrc"
 		bashrc;
 		option_picked "Operation Done!";
 		exit;
 		;;
 
+<<<<<<< HEAD
+	9) clear;
+=======
     	10) clear;
 		option_picked "Linking Python Subl Build";
 	        git_configs;
@@ -288,6 +322,7 @@ while [ opt != '' ]
 	    	;;
 
 	10) clear;
+>>>>>>> da299e3fcb2c530ebeaa7155f03a2f779fc99a04
 		;;
 
         x)
