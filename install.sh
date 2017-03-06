@@ -188,6 +188,13 @@ while [ opt != '' ]
         		option_picked "Operation Done!";
         		exit;
             	;;
+            3)  
+                clear;
+                option_picked "Removing Packages";
+                remove_packages;
+                option_picked "Operation Done!";
+                exit;
+                ;;
 
             4)  
                 clear;
