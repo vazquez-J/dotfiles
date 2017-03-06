@@ -245,12 +245,13 @@ while [ opt != '' ]
                 exit;
                 ;;
 
-	11) clear;
-		option_picked "Linking redshift config"
-			redshift_config;
-		option_picked "Operation Done!";
-		exit;
-		;;
+            11) 
+                clear;
+                option_picked "Linking redshift config"
+                redshift_config;
+                option_picked "Operation Done!";
+                exit;
+                ;;
 
             11)
                 clear;
@@ -260,12 +261,13 @@ while [ opt != '' ]
                 exit;
                 ;;
 
-	8) clear;
-		option_picked "Linking bashrc"
-		bashrc;
-		option_picked "Operation Done!";
-		exit;
-		;;
+            8) 
+                clear;
+                option_picked "Linking bashrc"
+                bashrc;
+                option_picked "Operation Done!";
+                exit;
+                ;;
 
             12)
                 clear;
@@ -301,6 +303,7 @@ while [ opt != '' ]
                 option_picked "Pick an option from the menu";
                 show_menu;
                 ;;
+                
         esac
     fi
 done
