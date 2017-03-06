@@ -4,7 +4,7 @@
 
     // tabs and whitespace
     // "auto_indent": true,
-    "rulers": [79],
+    "rulers": [100],
     "smart_indent": true,
     "tab_size": 4,
     "translate_tabs_to_spaces": true
