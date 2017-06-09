@@ -35,10 +35,18 @@ function vundle(){
 	git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 }
 
+function install_ppas(){
+	sudo add-apt-repository ppa:nathan-renniewaldock/flux
+
+	sudo apt update
+}
+
 function apt_packages(){
     echo 'Installing packages...'
+    echo 'Adding PPAs'
     sleep 2
-    sudo apt install -qq -y  zip xbacklight redshift git vim spotify-client meld build-essential ack-grep geoclue-2.0 libssl-dev
+    install_ppas()
+    sudo apt install -qq -y  zip xbacklight xflux git vim spotify-client meld build-essential ack-grep geoclue-2.0 libssl-dev
 	
 }
 
@@ -52,7 +60,7 @@ function py_packages(){
 
 function remove_packages(){
     echo 'Removing unneeded packages...'
-    sudo apt purge -y --force-yes pidgin thunderbird brasero
+    sudo apt purge -y --force-yes pidgin thunderbird brasero k3b
 }
 
 function download_sublime() {
