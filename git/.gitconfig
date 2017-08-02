@@ -3,7 +3,7 @@
 	email = rubenavazquez@gmail.com
 [core]
 	editor = vim
-	excludesfile = /home/user/.gitignore
+	excludesfile = /home/$USER/.gitignore
 	fileMode = true
 
 [credential]
@@ -16,3 +16,5 @@
 	tool = meld
 [mergetool]
 	keepBackup =
+[alias]
+	st = status -s
