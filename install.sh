@@ -36,8 +36,8 @@ function vundle(){
 }
 
 function install_ppas(){
+	echo 'Installing flux ppa and updating cache'
 	sudo add-apt-repository ppa:nathan-renniewaldock/flux
-
 	sudo apt update
 }
 
