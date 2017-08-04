@@ -1,31 +1,23 @@
 # list of apt packages to install and other stuff
 
-1. mkdir Dev
+1. change firefoxs in about:config - layout.css.devPixelsPerPx
 
-- for spotify 
-	sudo sh -c 'echo "deb http://repository.spotify.com stable non-free" >> /etc/apt/sources.list.d/spotify.list'
+2. Install grafana http://docs.grafana.org/installation/debian/
 
-	sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 94558F59
+3. Add udev rules for android usb devices -> $ wget -S -O - http://source.android.com/source/51-android.rules | sed "s/<username>/$USER/" | sudo tee >/dev/null /etc/udev/rules.d/51-android.rules; sudo udevadm control --reload-rules
 
-2. 
-
-3.
-
-4. change firefoxs in about:config - layout.css.devPixelsPerPx
-
-5. Install grafana http://docs.grafana.org/installation/debian/
-5. Add udev rules for android usb devices -> $ wget -S -O - http://source.android.com/source/51-android.rules | sed "s/<username>/$USER/" | sudo tee >/dev/null /etc/udev/rules.d/51-android.rules; sudo udevadm control --reload-rules
-
-6. Set up firefox settings to minimize disk writes 
+4. Set up firefox settings to minimize disk writes 
    - Need to automate this
    - about:config
    - browser.sessionstore.interval. Default set to 15 seconds change to 30m
    - 1d = 86400000 ms
-7. Wireshark - http://askubuntu.com/questions/74059/how-do-i-run-wireshark-with-root-privileges
 
-8. Add vundle and vimr rc
-9. gdb init in dotfiles directory, is it properly linked? 
+5. Wireshark - http://askubuntu.com/questions/74059/how-do-i-run-wireshark-with-root-privileges
+
+6. Add vundle and vimr rc
+
+7. gdb init in dotfiles directory, is it properly linked? 
+
 # References
-
-[6] - https://www.servethehome.com/firefox-is-eating-your-ssd-here-is-how-to-fix-it/
-[8] - http://unlogic.co.uk/2013/02/08/vim-as-a-python-ide/
+https://www.servethehome.com/firefox-is-eating-your-ssd-here-is-how-to-fix-it/
+http://unlogic.co.uk/2013/02/08/vim-as-a-python-ide/
