@@ -60,7 +60,7 @@ function py_packages(){
 
 function remove_packages(){
     echo 'Removing unneeded packages...'
-    sudo apt purge -y --force-yes pidgin thunderbird brasero k3b
+    sudo apt purge -y  pidgin thunderbird brasero k3b
 }
 
 function download_sublime(){
