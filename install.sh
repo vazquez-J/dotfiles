@@ -51,6 +51,7 @@ function apt_packages(){
 }
 
 
+
 function py_packages(){
     echo 'Installing python specific packages...'
     sudo apt install -qq -y  python-dev python-pip python3-pip python-setuptools python3-setuptools python3-wheel python3-dev
@@ -75,7 +76,7 @@ function download_sublime(){
 
 
 function vimrc(){
-    ln -sv -f "${BASEDIR}/.vimrc" ~/.vimrc
+    ln -sv -f "${BASEDIR}/vim/.vimrc" ~/.vimrc
     sleep 5
     echo 'Cloning vundle'
     vundle;
