@@ -46,7 +46,7 @@ function apt_packages(){
     echo 'Adding PPAs'
     sleep 2
     install_ppas
-    sudo apt install -qq -y  zip xbacklight xflux git vim meld build-essential ack-grep  libssl-dev
+    sudo apt install -qq -y  zip xbacklight fluxgui git vim meld build-essential ack-grep libssl-dev
 	
 }
 
@@ -73,10 +73,6 @@ function download_sublime(){
     fi
 }
 
-function remove_packages(){
-    echo 'Removing unneeded packages...'
-    sudo apt purge -y  pidgin thunderbird brasero
-}
 
 function vimrc(){
     ln -sv -f "${BASEDIR}/.vimrc" ~/.vimrc
