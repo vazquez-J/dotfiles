@@ -32,7 +32,8 @@ show_menu(){
 
 function vundle(){
 	echo 'Installing vundle'
-	git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+	git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+	sleep 2
 }
 
 function install_ppas(){
@@ -80,6 +81,8 @@ function vimrc(){
     sleep 5
     echo 'Cloning vundle'
     vundle;
+    echo 'Installing plugins'
+    vim +PluginInstall +qall
 }
 
 function venv(){
