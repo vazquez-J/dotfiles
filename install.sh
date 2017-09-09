@@ -45,8 +45,8 @@ function apt_packages(){
     echo 'Installing packages...'
     echo 'Adding PPAs'
     sleep 2
-#    install_ppas()
-    sudo apt install -qq -y  zip xbacklight xflux git vim meld build-essential ack-grep geoclue-2.0 libssl-dev
+    install_ppas
+    sudo apt install -qq -y  zip xbacklight xflux git vim meld build-essential ack-grep  libssl-dev
 	
 }
 
