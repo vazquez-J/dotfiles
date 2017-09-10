@@ -21,6 +21,7 @@
 # Step after OS reinstall
 1. Optimize ssd
 2. power management
+3. generate github ssh keys
 
 # VS code setup
 
