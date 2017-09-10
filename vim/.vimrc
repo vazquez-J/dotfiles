@@ -30,34 +30,28 @@ filetype plugin indent on    " required
 filetype plugin indent on
 " For a sidepane
 map <F2> :NERDTreeToggle<CR>
+
 " Set indentation
-set autoindent
-set smartindent
-
-
-" Ignore case when searching
-set ignorecase
-
-" Disable error bells
-set noerrorbells
-
-" Shows line numbers
-set number
-
-" Show filename in titlebar
-set title
+set autoindent          " use indentation of previous line
+set smartindent         " use c like indenting
+set expandtab		" tabs are spaces
+set ignorecase		" ignore case when searching
+set noerrorbells	" disable error bells 
+set number              " shows line numbers
+set title               " show filename in titlebar
 
 " python stuff
 set nocompatible
 set smarttab
 set backspace=indent,eol,start
-syntax on
+syntax on		"enable syntax processing letting vim override custom settings
 
 
 " Other stuff from videos etc
 " remap caps lock to esc
 
 
+inoremap jk <ESC>
 """""""""""""""""" C/C++ specdific stuff """"""""""""""""""""""""""""""""""""
 augroup project
 	autocmd!
