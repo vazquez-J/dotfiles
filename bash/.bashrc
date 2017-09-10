@@ -130,4 +130,5 @@ export WORKON_HOME=$HOME/.virtualenvs
 # For android builds
 export USE_CCACHE=1
 
-source /usr/local/bin/virtualenvwrapper_lazy.sh
+# source /usr/local/bin/virtualenvwrapper_lazy.sh
+export PATH=/opt/anaconda3/bin:$PATH
