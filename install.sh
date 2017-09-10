@@ -116,8 +116,8 @@ function bashrc(){
 }
 
 function divert_ack() {
-	sudo dpkg-divert --local --divert /usr/bin/ack --rename --add /usr/bin/ack-grep
-	# to remove diversion sudo dpkg-divert --remove /usr/bin/ack-grep
+    sudo dpkg-divert --local --divert /usr/bin/ack --rename --add /usr/bin/ack-grep
+    # to remove diversion sudo dpkg-divert --remove /usr/bin/ack-grep
 }
 
 function atom(){
