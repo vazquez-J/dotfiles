@@ -55,7 +55,7 @@ function apt_packages(){
 
 function py_packages(){
     echo 'Installing python specific packages...'
-    sudo apt install -qq -y  python-dev python-pip python3-pip python-setuptools python3-setuptools python3-wheel python3-dev
+    sudo apt install -qq -y python-dev python-pip python3-pip python-setuptools python3-setuptools python3-wheel python3-dev python-wheel
     sleep 2
 }
 
@@ -75,6 +75,10 @@ function download_sublime(){
     fi
 }
 
+function remove_packages(){
+    echo 'Removing unneeded packages...'
+    sudo apt purge -y --force-yes pidgin thunderbird brasero
+}
 
 function vimrc(){
     ln -sv -f "${BASEDIR}/vim/.vimrc" ~/.vimrc
