@@ -32,7 +32,13 @@ show_menu(){
 
 function vundle(){
 	echo 'Installing vundle'
-	git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+        if [ ! -d "/home/rvaz/.vim/bundle/Vundle.vim" ]
+        then
+                echo "Cloning Vundle from git"
+                git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+        else
+                echo "Vundle.vim already installed"
+        fi
 	sleep 2
 }
 
@@ -83,7 +89,6 @@ function remove_packages(){
 function vimrc(){
     ln -sv -f "${BASEDIR}/vim/.vimrc" ~/.vimrc
     sleep 5
-    echo 'Cloning vundle'
     vundle;
     echo 'Installing plugins'
     vim +PluginInstall +qall
