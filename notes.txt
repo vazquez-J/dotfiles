@@ -18,6 +18,13 @@
 
 7. gdb init in dotfiles directory, is it properly linked? 
 
+# Step after OS reinstall
+1. Optimize ssd
+2. power management
+3. generate github ssh keys
+
+# VS code setup
+
 # References
 https://www.servethehome.com/firefox-is-eating-your-ssd-here-is-how-to-fix-it/
 http://unlogic.co.uk/2013/02/08/vim-as-a-python-ide/
