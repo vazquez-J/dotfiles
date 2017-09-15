@@ -47,7 +47,7 @@ function apt_packages(){
     echo 'Adding PPAs'
     sleep 2
     install_ppas
-    sudo apt install -qq -y  zip xbacklight fluxgui git vim meld build-essential ack-grep libssl-dev
+    sudo apt install -qq -y  zip xbacklight fluxgui git vim meld build-essential ack-grep libssl-dev htop
 	
 }
 
