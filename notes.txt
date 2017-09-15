@@ -10,6 +10,7 @@
    - Need to automate this
    - about:config
    - browser.sessionstore.interval. Default set to 15 seconds change to 30m
+   - 30m = 1800000 = 15000ms * 4 * 30
    - 1d = 86400000 ms
 
 5. Wireshark - http://askubuntu.com/questions/74059/how-do-i-run-wireshark-with-root-privileges
@@ -28,3 +29,4 @@
 # References
 https://www.servethehome.com/firefox-is-eating-your-ssd-here-is-how-to-fix-it/
 http://unlogic.co.uk/2013/02/08/vim-as-a-python-ide/
+https://sites.google.com/site/easylinuxtipsproject/ssd
