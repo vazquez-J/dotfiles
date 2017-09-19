@@ -197,11 +197,12 @@ while [ opt != '' ]
 
             2)  
                 clear;
-        		option_picked "Installing Python Packages";
+        	option_picked "Installing Python Packages";
             	py_packages;
-        		option_picked "Operation Done!";
-        		exit;
+        	option_picked "Operation Done!";
+        	exit;
             	;;
+
             3)  
                 clear;
                 option_picked "Removing Packages";
@@ -212,10 +213,10 @@ while [ opt != '' ]
 
             4)  
                 clear;
-        		option_picked "Linking vimrc";
+        	option_picked "Linking vimrc";
             	vimrc;
-        		option_picked "Operation Done!";
-        		exit;
+        	option_picked "Operation Done!";
+        	exit;
             	;;
 
             5) 
@@ -226,7 +227,7 @@ while [ opt != '' ]
                 exit;
                 ;;
 
-        	6)
+            6)
                 clear;
                 option_picked "Linking ackrc";
                 ackrc;
@@ -234,7 +235,7 @@ while [ opt != '' ]
                 exit;
                 ;;
 
-        	7)
+            7)
                 clear;
                 option_picked "Linking git configs";
                 git_configs;
