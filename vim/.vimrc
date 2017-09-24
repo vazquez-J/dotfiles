@@ -31,6 +31,12 @@ filetype plugin indent on
 " For a sidepane
 map <F2> :NERDTreeToggle<CR>
 
+" Other
+set hlsearch            " highlight search terms
+set incsearch           " show search matches as you type
+set nobackup
+set noswapfile
+
 " Set indentation
 set autoindent          " use indentation of previous line
 set smartindent         " use c like indenting
