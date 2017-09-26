@@ -23,6 +23,7 @@
 1. Optimize ssd
 2. power management
 3. generate github ssh keys
+4. install conda/miniconda for python package and env management
 
 # VS code setup
 
