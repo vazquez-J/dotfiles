@@ -4,7 +4,7 @@ Name=Chromium Web Browser
 GenericName=Web Browser
 Comment=Access the Internet
 #Exec=chromium-browser %U
-Exec=chromium-browser --force-device-scale-factor=1.3
+Exec=chromium-browser %U --force-device-scale-factor=1.3
 
 Terminal=false
 X-MultipleArgs=false
