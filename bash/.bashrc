@@ -97,6 +97,7 @@ fi
 alias ll='ls -alFh'
 alias la='ls -A'
 alias l='ls -CF'
+alias cdv='cd  /home/rvazquez/Vagrant'
 
 # RV aliases 
 alias cdd='cd /home/$USER/Dev'
@@ -133,3 +134,6 @@ export USE_CCACHE=1
 # source /usr/local/bin/virtualenvwrapper_lazy.sh
 export PATH=/opt/anaconda3/bin:$PATH
 export PATH=/opt/platform-tools:$PATH
+if [ -d /usr/local/go ]; then
+        export PATH=$PATH:/usr/local/go/bin
+fi
