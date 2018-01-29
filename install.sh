@@ -124,10 +124,11 @@ function bashrc(){
     ln -svf "${BASEDIR}/bash/.bashrc" ~/.bashrc
 }
 
-function divert_ack() {
-    sudo dpkg-divert --local --divert /usr/bin/ack --rename --add /usr/bin/ack-grep
-    # to remove diversion sudo dpkg-divert --remove /usr/bin/ack-grep
-}
+# No longer needed, ack-grep already diverts the package
+#function divert_ack() {
+#    sudo dpkg-divert --local --divert /usr/bin/ack --rename --add /usr/bin/ack-grep
+#    # to remove diversion sudo dpkg-divert --remove /usr/bin/ack-grep
+#}
 
 function atom(){
     echo " Linking atom directory"
