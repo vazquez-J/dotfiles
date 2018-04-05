@@ -16,3 +16,6 @@ bin/
 
 # IDE files
 .cproject
+
+# Secrets
+*.pem
