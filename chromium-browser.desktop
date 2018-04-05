@@ -1,11 +1,8 @@
 [Desktop Entry]
 Version=1.0
 Name=Chromium Web Browser
-GenericName=Web Browser
 Comment=Access the Internet
-#Exec=chromium-browser %U
-Exec=chromium-browser %U --force-device-scale-factor=1.3
-
+Exec=chromium-browser %U --force-device-scale-factor=1.2
 Terminal=false
 X-MultipleArgs=false
 Type=Application
@@ -16,13 +13,15 @@ StartupNotify=true
 Actions=NewWindow;Incognito;TempProfile;
 X-AppInstall-Package=chromium-browser
 
+X-Desktop-File-Install-Version=0.22
+
 [Desktop Action NewWindow]
 Name=Open a New Window
-Exec=chromium-browser
+Exec=chromium-browser %U --force-device-scale-factor=1.2
 
 [Desktop Action Incognito]
 Name=Open a New Window in incognito mode
-Exec=chromium-browser --incognito
+Exec=chromium-browser --incognito --force-device-scale-factor=1.2
 
 [Desktop Action TempProfile]
 Name=Open a New Window with a temporary profile
