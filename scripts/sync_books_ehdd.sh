@@ -1,1 +1,3 @@
-rsync --delete -avsh ./Books/ /media/rvazquez/My\ Passport/Books/
+#/bin/bash
+
+rsync --delete -avsh /home/$USER/Books/ /media/rvazquez/My\ Passport/Books/
