@@ -11,6 +11,7 @@ Plugin 'scrooloose/nerdtree'
 " Bundle 'klen/python-mode'
 Bundle 'tpope/vim-fugitive'
 Plugin 'vim-airline/vim-airline'
+Bundle 'chase/vim-ansible-yaml'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
