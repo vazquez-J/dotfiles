@@ -68,7 +68,7 @@ function py_packages(){
 
 function remove_packages(){
     echo 'Removing unneeded packages...'
-    sudo apt purge -y  pidgin thunderbird brasero k3b
+    sudo apt purge -y  pidgin thunderbird brasero k3b xplayer gnome-orca mono-runtime-common ndiswrapper*
 }
 
 function download_sublime(){
