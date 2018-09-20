@@ -24,10 +24,26 @@ show_menu(){
     echo -e "${MENU}**${NUMBER} 11)${MENU} Link  redshift config ${NORMAL}"
     echo -e "${MENU}**${NUMBER} 12)${MENU} Spotify ${NORMAL}"
     echo -e "${MENU}**${NUMBER} 13)${MENU} Link Geoclue Settings ${NORMAL}"
+    echo -e "${MENU}**${NUMBER} 14)${MENU} Install sublime text ${NORMAL}"
     echo -e "${MENU}*********************************************${NORMAL}"
     echo -e "${ENTER_LINE}Please enter a menu option and enter or ${RED_TEXT}enter to exit. ${NORMAL}"
     echo -e "${ENTER_LINE}Press q to exit ${RED_TEXT}enter to exit. ${NORMAL}"
     read opt
+}
+
+function install_sublime_text() {
+	echo -e 'Installing sublime gpg keys...'
+	wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
+
+	echo -e 'Installing apt package apt-transport-https'
+	sudo apt-get install apt-transport-https
+
+	echo -e 'Adding sources'
+	echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
+
+	echo -e 'Installing sublime text'
+	sudo apt-get update
+	sudo apt-get install -yq sublime-text
 }
 
 function vundle(){
@@ -313,6 +329,14 @@ while [ opt != '' ]
                 clear;
                 option_picked "Linking GeoClue config"
                 geoclue;
+                option_picked "Operation Done!";
+                exit;
+                ;;
+
+            14)
+                clear;
+                option_picked "Installing sublime text"
+                install_sublime_text;
                 option_picked "Operation Done!";
                 exit;
                 ;;
