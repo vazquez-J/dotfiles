@@ -34,3 +34,4 @@ echo '1' > '/sys/module/snd_hda_intel/parameters/power_save';
 
 # Low power wireless
 iw dev wlan0 set power_save on
+

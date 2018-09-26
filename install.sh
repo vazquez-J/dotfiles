@@ -84,7 +84,7 @@ function py_packages(){
 
 function remove_packages(){
     echo 'Removing unneeded packages...'
-    sudo apt purge -y  pidgin thunderbird brasero k3b
+    sudo apt purge -y  pidgin thunderbird brasero k3b xplayer gnome-orca mono-runtime-common ndiswrapper*
 }
 
 function download_sublime(){
@@ -329,14 +329,6 @@ while [ opt != '' ]
                 clear;
                 option_picked "Linking GeoClue config"
                 geoclue;
-                option_picked "Operation Done!";
-                exit;
-                ;;
-
-            14)
-                clear;
-                option_picked "Installing sublime text"
-                install_sublime_text;
                 option_picked "Operation Done!";
                 exit;
                 ;;
