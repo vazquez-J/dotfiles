@@ -31,3 +31,16 @@
 https://www.servethehome.com/firefox-is-eating-your-ssd-here-is-how-to-fix-it/
 http://unlogic.co.uk/2013/02/08/vim-as-a-python-ide/
 https://sites.google.com/site/easylinuxtipsproject/ssd
+
+# Things to do for a fresh install
+1. install docker-ce
+2. install docker-compose
+3. install sublime-text
+4. install adb and android-tools
+5. setup udev rules for android usb
+6. setup git
+7. setup vim
+8. install golang
+9. install awscli
+10. install aws-shell
+11. configure awscli

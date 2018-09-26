@@ -1,0 +1,17 @@
+- hosts: rvazquez-t460s
+  tasks:
+    name: Remove unneeded apt packages
+    sudo: yes
+    when: ansible_os_family == "Debian"
+    apt:
+      name: "{{item}}"
+      state: absent
+    with_items:
+      - k3b
+      - pidgin
+      - thunderbird
+      - brasero
+      - xplayer
+      - gnome-orca
+      - mono-runtime-common
+      - ndiswrapper*

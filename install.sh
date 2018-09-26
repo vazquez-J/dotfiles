@@ -24,11 +24,26 @@ show_menu(){
     echo -e "${MENU}**${NUMBER} 11)${MENU} Link  redshift config ${NORMAL}"
     echo -e "${MENU}**${NUMBER} 12)${MENU} Spotify ${NORMAL}"
     echo -e "${MENU}**${NUMBER} 13)${MENU} Link Geoclue Settings ${NORMAL}"
-    echo -e "${MENU}**${NUMBER} 14)${MENU} Install golang from ppa ${NORMAL}"
+    echo -e "${MENU}**${NUMBER} 14)${MENU} Install sublime text ${NORMAL}"
     echo -e "${MENU}*********************************************${NORMAL}"
     echo -e "${ENTER_LINE}Please enter a menu option and enter or ${RED_TEXT}enter to exit. ${NORMAL}"
     echo -e "${ENTER_LINE}Press q to exit ${RED_TEXT}enter to exit. ${NORMAL}"
     read opt
+}
+
+function install_sublime_text() {
+	echo -e 'Installing sublime gpg keys...'
+	wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
+
+	echo -e 'Installing apt package apt-transport-https'
+	sudo apt-get install apt-transport-https
+
+	echo -e 'Adding sources'
+	echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
+
+	echo -e 'Installing sublime text'
+	sudo apt-get update
+	sudo apt-get install -yq sublime-text
 }
 
 function vundle(){
@@ -45,9 +60,7 @@ function vundle(){
 
 function install_ppas(){
 	echo 'Installing flux ppa and updating cache'
-        sudo apt update
 	sudo add-apt-repository ppa:nathan-renniewaldock/flux
-        sudo add-apt-repository ppa:gophers/archive
 	sudo apt update
 }
 
@@ -59,6 +72,8 @@ function apt_packages(){
     sudo apt install -qq -y  zip xbacklight fluxgui git vim meld build-essential ack-grep libssl-dev htop tree
 	
 }
+
+
 
 function py_packages(){
     echo 'Installing python specific packages...'
@@ -183,10 +198,6 @@ function option_picked() {
     echo -e "${COLOR}${MESSAGE}${RESET}"
 }
 
-function install_golang() {
-        sudo apt install golang-1.10-go
-}
-
 function init_function() {
 clear
 BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
@@ -290,6 +301,22 @@ while [ opt != '' ]
                 exit;
                 ;;
 
+            11)
+                clear;
+                option_picked "Linking redshift config"
+                redshift_config;
+                option_picked "Operation Done!";
+                exit;
+                ;;
+
+            8) 
+                clear;
+                option_picked "Linking bashrc"
+                bashrc;
+                option_picked "Operation Done!";
+                exit;
+                ;;
+
             12)
                 clear;
                 option_picked "Linking Spotify"
@@ -302,14 +329,6 @@ while [ opt != '' ]
                 clear;
                 option_picked "Linking GeoClue config"
                 geoclue;
-                option_picked "Operation Done!";
-                exit;
-                ;;
-
-            14)
-                clear;
-                option_picked "installing golang from ppa"
-                install_golang;
                 option_picked "Operation Done!";
                 exit;
                 ;;
