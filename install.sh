@@ -36,14 +36,14 @@ function install_sublime_text() {
 	wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
 
 	echo -e 'Installing apt package apt-transport-https'
-	sudo apt-get install apt-transport-https
+	sudo apt-get install -yqq apt-transport-https
 
 	echo -e 'Adding sources'
 	echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
 
 	echo -e 'Installing sublime text'
-	sudo apt-get update
-	sudo apt-get install -yq sublime-text
+	sudo apt-get -qq update
+	sudo apt-get install -yqq sublime-text
 }
 
 function vundle(){
@@ -325,10 +325,10 @@ while [ opt != '' ]
                 exit;
                 ;;
 
-            13)
+            14)
                 clear;
-                option_picked "Linking GeoClue config"
-                geoclue;
+                option_picked "Installing sublimetext3"
+                install_sublime_text;
                 option_picked "Operation Done!";
                 exit;
                 ;;

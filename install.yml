@@ -1,17 +1,35 @@
-- hosts: rvazquez-t460s
+---
+- hosts: 127.0.0.1
+  become: yes
   tasks:
-    name: Remove unneeded apt packages
-    sudo: yes
-    when: ansible_os_family == "Debian"
-    apt:
-      name: "{{item}}"
-      state: absent
-    with_items:
-      - k3b
-      - pidgin
-      - thunderbird
-      - brasero
-      - xplayer
-      - gnome-orca
-      - mono-runtime-common
-      - ndiswrapper*
+    - name: Remove unneeded apt packages
+      sudo: yes
+      when: ansible_os_family == "Debian"
+      apt:
+        name: "{{item}}"
+        state: absent
+      with_items:
+        - k3b
+        - pidgin
+        - thunderbird
+        - brasero
+        - xplayer
+        - gnome-orca
+        - mono-runtime-common
+        - ndiswrapper*
+
+    - name: Install essentials
+      become: yes
+      apt:
+        name: "{{item}}"
+        state: present
+      with_items:
+        - zip
+        - git
+        - vim 
+        - meld 
+        - build-essential 
+        - ack-grep 
+        - libssl-dev 
+        - htop 
+        - tree
