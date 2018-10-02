@@ -1,0 +1,8 @@
+---
+- name: copy 51-android.rules to /etc/udev/rules.d/
+  copy:
+    src: files/51-android.rules
+    dest: /etc/udev/rules.d/
+    owner: root
+    group: root
+

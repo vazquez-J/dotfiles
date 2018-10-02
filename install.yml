@@ -1,35 +1,12 @@
 ---
-- hosts: 127.0.0.1
-  become: yes
-  tasks:
-    - name: Remove unneeded apt packages
-      sudo: yes
-      when: ansible_os_family == "Debian"
-      apt:
-        name: "{{item}}"
-        state: absent
-      with_items:
-        - k3b
-        - pidgin
-        - thunderbird
-        - brasero
-        - xplayer
-        - gnome-orca
-        - mono-runtime-common
-        - ndiswrapper*
+- hosts: localhost
+  become: true
+  pre_tasks:
+    - name: update repos
+      apt: update_cache=yes
+      changed_when: False
 
-    - name: Install essentials
-      become: yes
-      apt:
-        name: "{{item}}"
-        state: present
-      with_items:
-        - zip
-        - git
-        - vim 
-        - meld 
-        - build-essential 
-        - ack-grep 
-        - libssl-dev 
-        - htop 
-        - tree
+  tasks:
+    - include: tasks/apt_packages.yml
+    - include: tasks/make_dirs.yml
+    - include: tasks/install_android_udev_rules.yml
