@@ -1,0 +1,10 @@
+---
+- name: make dev directory
+  file: 
+    path: ~/dev 
+    state: directory
+
+- name: make .local/bin directory
+  file: 
+    path: ~/.local/bin 
+    state: directory
