@@ -7,3 +7,9 @@
     group: root
     mode: a+r
 
+- name: restart udev
+  become: yes
+  command: udevadm control --reload-rules
+  service:
+    name: udev
+    state: restarted
