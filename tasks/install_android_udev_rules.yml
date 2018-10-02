@@ -5,4 +5,5 @@
     dest: /etc/udev/rules.d/
     owner: root
     group: root
+    mode: a+r
 
