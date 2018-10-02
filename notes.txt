@@ -1,4 +1,8 @@
-# list of apt packages to install and other stuff
+Transitioning from bash script to all ansible based laptop setup. 
+
+# list of apt packages to install and delete
+-  This is defined in `tasks/apt_packages.yml` file
+-  This is defined in `tasks/apt_packages.yml` file
 
 1. change firefoxs in about:config - layout.css.devPixelsPerPx
 
@@ -19,20 +23,10 @@
 
 7. gdb init in dotfiles directory, is it properly linked? 
 
-# Step after OS reinstall
-1. Optimize ssd
-2. power management
-3. generate github ssh keys
-4. install conda/miniconda for python package and env management
 
 # VS code setup
 
-# References
-https://www.servethehome.com/firefox-is-eating-your-ssd-here-is-how-to-fix-it/
-http://unlogic.co.uk/2013/02/08/vim-as-a-python-ide/
-https://sites.google.com/site/easylinuxtipsproject/ssd
-
-# Things to do for a fresh install
+# Things to do after a fresh install
 1. install docker-ce
 2. install docker-compose
 3. install sublime-text
@@ -44,3 +38,16 @@ https://sites.google.com/site/easylinuxtipsproject/ssd
 9. install awscli
 10. install aws-shell
 11. configure awscli
+12. optimize ssd
+13. power management
+14. gen github ssh keys
+15. 
+
+
+
+# References
+- https://www.servethehome.com/firefox-is-eating-your-ssd-here-is-how-to-fix-it/
+- http://unlogic.co.uk/2013/02/08/vim-as-a-python-ide/
+- https://sites.google.com/site/easylinuxtipsproject/ssd
+- https://medium.com/@dardovaldez/fine-tunning-a-ssd-for-a-t470-ubuntu-18-04-b504dceaef50
+- https://slimbook.es/tutoriales/linux/93-optimizar-nuestro-ssd-en-linux
