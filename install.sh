@@ -23,12 +23,18 @@ show_menu(){
     echo -e "${MENU}**${NUMBER} 10)${MENU} Link Python Settings${NORMAL}"
     echo -e "${MENU}**${NUMBER} 11)${MENU} Link  redshift config ${NORMAL}"
     echo -e "${MENU}**${NUMBER} 12)${MENU} Spotify ${NORMAL}"
-    echo -e "${MENU}**${NUMBER} 13)${MENU} Link Geoclue Settings ${NORMAL}"
+    echo -e "${MENU}**${NUMBER} 13)${MENU} Install signal-desktop ${NORMAL}"
     echo -e "${MENU}**${NUMBER} 14)${MENU} Install sublime text ${NORMAL}"
     echo -e "${MENU}*********************************************${NORMAL}"
     echo -e "${ENTER_LINE}Please enter a menu option and enter or ${RED_TEXT}enter to exit. ${NORMAL}"
     echo -e "${ENTER_LINE}Press q to exit ${RED_TEXT}enter to exit. ${NORMAL}"
     read opt
+}
+
+function install_signal_desktop() {
+    curl -s https://updates.signal.org/desktop/apt/keys.asc | sudo apt-key add -
+    echo "deb [arch=amd64] https://updates.signal.org/desktop/apt xenial main" | sudo tee -a /etc/apt/sources.list.d/signal-xenial.list
+    sudo apt update && sudo apt install -yq signal-desktop
 }
 
 function install_sublime_text() {
@@ -72,7 +78,6 @@ function apt_packages(){
     sudo apt install -qq -y  zip xbacklight fluxgui git vim meld build-essential ack-grep libssl-dev htop tree
 	
 }
-
 
 
 function py_packages(){
@@ -317,10 +322,10 @@ while [ opt != '' ]
                 exit;
                 ;;
 
-            12)
+            13)
                 clear;
-                option_picked "Linking Spotify"
-                spotify;
+                option_picked "Install signal-desktop"
+                install_signal_desktop;
                 option_picked "Operation Done!";
                 exit;
                 ;;
