@@ -1,0 +1,13 @@
+---
+- hosts: localhost
+  become: true
+  tasks:
+          - name: Add config for swapines
+            lineinfile:
+                    path: /etc/sysctl.conf
+                    line: "{{items}}"
+
+          - with_items:
+                  - 'vm.swappiness=2'
+                  - 'vm.vfs_cache_pressure=50'
+                  - 'vm.dirty_writeback_centisecs=1500'

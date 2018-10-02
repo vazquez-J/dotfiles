@@ -1,0 +1,6 @@
+---
+- hosts: localhost
+  tasks:
+    - name: Add to fstab lines for setting /tmp /var/tmp to tmpfs
+
+
