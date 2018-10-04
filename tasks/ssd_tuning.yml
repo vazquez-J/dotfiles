@@ -4,3 +4,9 @@
     - name: Add to fstab lines for setting /tmp /var/tmp to tmpfs
 
 
+
+# REF:
+# - https://docs.ansible.com/ansible/latest/modules/sysctl_module.html#sysctl-module
+# - https://docs.ansible.com/ansible/latest/modules/service_module.html#service-module
+# - https://docs.ansible.com/ansible/latest/modules/systemd_module.html#systemd-module
+# - https://docs.ansible.com/ansible/latest/modules/dconf_module.html#dconf-module
