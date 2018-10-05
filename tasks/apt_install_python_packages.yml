@@ -1,0 +1,15 @@
+---
+- name: Install python packages
+  when: ansible_os_family == "Debian"
+  apt:
+    name: "{{items}}"
+    state: present
+  with_items:
+    - python-dev
+    - python-wheel
+    - python-pip
+    - python-setuptools
+    - python3-pip
+    - python3-setuptools
+    - python3-wheel
+    - python3-dev
