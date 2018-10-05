@@ -1,5 +1,5 @@
 ---
-- name: Remove apt packages	
+- name: Remove apt packages
   when: ansible_os_family == "Debian"
   apt:
     name: "{{item}}"
@@ -22,11 +22,11 @@
   with_items:
     - zip
     - git
-    - vim 
-    - meld 
-    - build-essential 
-    - ack-grep 
-    - libssl-dev 
-    - htop 
+    - vim
+    - meld
+    - build-essential
+    - ack-grep
+    - libssl-dev
+    - htop
     - tree
     - curl
