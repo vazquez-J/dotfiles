@@ -10,3 +10,14 @@
     - include: tasks/apt_packages.yml
     - include: tasks/make_dirs.yml
     - include: tasks/install_android_udev_rules.yml
+    - name: install sublimetext3
+        shell: scripts/install_sublimetext3.sh
+        notify: echo done
+
+# Handlers section
+# Tasks in handlers section are not called unless called by tasks
+
+handlers:
+    - name: echo done
+        shell: echo 'DOne'
+
