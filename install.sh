@@ -37,21 +37,6 @@ function install_signal_desktop() {
     sudo apt update && sudo apt install -yq signal-desktop
 }
 
-function install_sublime_text() {
-	echo -e 'Installing sublime gpg keys...'
-	wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
-
-	echo -e 'Installing apt package apt-transport-https'
-	sudo apt-get install -yqq apt-transport-https
-
-	echo -e 'Adding sources'
-	echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
-
-	echo -e 'Installing sublime text'
-	sudo apt-get -qq update
-	sudo apt-get install -yqq sublime-text
-}
-
 function vundle(){
 	echo 'Installing vundle'
         if [ ! -d "/home/rvaz/.vim/bundle/Vundle.vim" ]
@@ -76,7 +61,7 @@ function apt_packages(){
     sleep 2
     install_ppas
     sudo apt install -qq -y  zip xbacklight fluxgui git vim meld build-essential ack-grep libssl-dev htop tree
-	
+
 }
 
 
@@ -215,7 +200,7 @@ while [ opt != '' ]
     else
         case $opt in
 
-            1) 
+            1)
                 clear;
                 option_picked "Installing Apt Packages";
                 apt_packages;
@@ -226,7 +211,7 @@ while [ opt != '' ]
                 exit;
                 ;;
 
-            2)  
+            2)
                 clear;
         	option_picked "Installing Python Packages";
             	py_packages;
@@ -234,7 +219,7 @@ while [ opt != '' ]
         	exit;
             	;;
 
-            3)  
+            3)
                 clear;
                 option_picked "Removing Packages";
                 remove_packages;
@@ -242,7 +227,7 @@ while [ opt != '' ]
                 exit;
                 ;;
 
-            4)  
+            4)
                 clear;
         	option_picked "Linking vimrc";
             	vimrc;
@@ -250,7 +235,7 @@ while [ opt != '' ]
         	exit;
             	;;
 
-            5) 
+            5)
                 clear;
                 option_picked "Linking GDB init";
                 gdb_init
@@ -298,7 +283,7 @@ while [ opt != '' ]
                 exit;
                 ;;
 
-            11) 
+            11)
                 clear;
                 option_picked "Linking redshift config"
                 redshift_config;
@@ -314,7 +299,7 @@ while [ opt != '' ]
                 exit;
                 ;;
 
-            8) 
+            8)
                 clear;
                 option_picked "Linking bashrc"
                 bashrc;
@@ -356,7 +341,7 @@ while [ opt != '' ]
                 option_picked "Pick an option from the menu";
                 show_menu;
                 ;;
-                
+
         esac
     fi
 done
