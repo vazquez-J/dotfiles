@@ -15,7 +15,7 @@ I still need to figure out how to run individual plays and not the entire playbo
 - install docker-compose	-> TODO
 - install sublime-text
 - install adb and android-tools
-- install awscli
+- install awscli, aws-shell
 - install apt packages
 - install python specific apt packages
 - uninstall apt packages
