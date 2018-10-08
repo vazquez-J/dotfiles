@@ -1,4 +1,4 @@
-# This repo holds the secret for quick rebound time after a fresh install of Ubuntu/Linux. The purpose is to not be scared to install the latest and greatest in Ubuntu and have no fear of having to spend hours getting your system to your liking. Listed below are the plays. The package installation instructions are sourced from their respective websites.
+This repo holds the secret for quick rebound time after a fresh install of Ubuntu/Linux. The purpose is to not be scared to install the latest and greatest in Ubuntu and have no fear of having to spend hours getting your system to your liking. Listed below are the plays. The package installation instructions are sourced from their respective websites.
 
 # How to run:
 From project root:
@@ -9,6 +9,7 @@ I still need to figure out how to run individual plays and not the entire playbo
 
 ## list of apt packages to install and delete
 -  This is defined in `tasks/apt_packages.yml` file
+
 
 - install docker-ce 		-> TODO
 - install docker-compose	-> TODO
