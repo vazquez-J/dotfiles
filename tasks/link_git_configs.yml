@@ -1,1 +1,20 @@
 # TODO
+---
+# I feel like this line is redundant and does not do anything
+# if my understanding is correct I am copying the .gitconig file that is in
+# the home directory (~/.gitconfig) and I am just copying it to the same directory
+
+- name: copy ~/.gitconfig to ~/.gitconfig 
+  copy:
+    src: ~/.gitconfig
+    dest: ~/.gitconfig
+    owner: root
+    group: root
+    mode:
+
+- name: 
+  become:
+  command: 
+  service:
+    name: 
+    state:
