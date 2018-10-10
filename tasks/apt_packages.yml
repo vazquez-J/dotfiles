@@ -30,3 +30,4 @@
     - htop
     - tree
     - curl
+    - openssh-server
