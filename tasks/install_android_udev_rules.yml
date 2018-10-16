@@ -2,14 +2,16 @@
 - name: copy 51-android.rules to /etc/udev/rules.d/
   copy:
     src: files/51-android.rules
-    dest: /etc/udev/rules.d/
+    dest: /etc/udev/rules.d/51-android.rules
     owner: root
     group: root
     mode: a+r
 
-- name: restart udev
+- name: reload udev rules
   become: yes
   command: udevadm control --reload-rules
-  service:
-    name: udev
-    state: restarted
+
+- name: restart systemd-udevd.service
+  systemd:
+    name: systemd-udevd.service
+    state: reloaded
