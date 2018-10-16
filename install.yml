@@ -14,6 +14,13 @@
         shell: scripts/install_sublimetext3.sh
         notify: echo done
 
+# Linking configs
+    - name: link ackrc file
+      file:
+        src: ack/.ackrc
+        dest: ~/.ackrc
+        state: link
+
 # Handlers section
 # Tasks in handlers section are not called unless called by tasks
 
