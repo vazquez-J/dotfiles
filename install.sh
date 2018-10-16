@@ -22,7 +22,7 @@ show_menu(){
     echo -e "${MENU}**${NUMBER} 9)${MENU} Link atom config ${NORMAL}"
     echo -e "${MENU}**${NUMBER} 10)${MENU} Link Python Settings${NORMAL}"
     echo -e "${MENU}**${NUMBER} 11)${MENU} Link  redshift config ${NORMAL}"
-    echo -e "${MENU}**${NUMBER} 12)${MENU} Spotify ${NORMAL}"
+    echo -e "${MENU}**${NUMBER} 12)${MENU} Install Docker and Docker-compose ${NORMAL}"
     echo -e "${MENU}**${NUMBER} 13)${MENU} Install signal-desktop ${NORMAL}"
     echo -e "${MENU}**${NUMBER} 14)${MENU} Install sublime text ${NORMAL}"
     echo -e "${MENU}*********************************************${NORMAL}"
@@ -35,6 +35,32 @@ function install_signal_desktop() {
     curl -s https://updates.signal.org/desktop/apt/keys.asc | sudo apt-key add -
     echo "deb [arch=amd64] https://updates.signal.org/desktop/apt xenial main" | sudo tee -a /etc/apt/sources.list.d/signal-xenial.list
     sudo apt update && sudo apt install -yq signal-desktop
+}
+
+function install_docker() {
+    echo 'Updating packages'
+    sudo apt update -qq
+
+    echo 'Installing dependencies'
+    sudo apt install -yqq apt-transport-https ca-certificates software-properties-common
+
+    echo 'Installing key'
+    curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+
+    sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu xenial stable"
+    sudo apt update
+
+    sudo apt install -yq docker-ce
+
+    echo "Adding docker group"
+    sudo usermod -aG docker $USER
+
+    echo "installing docker-compose"
+    sudo curl -L "https://github.com/docker/compose/releases/download/1.22.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+
+    sudo chmod +x /usr/local/bin/docker-compose
+
+    sudo curl -L https://raw.githubusercontent.com/docker/compose/1.22.0/contrib/completion/bash/docker-compose -o /etc/bash_completion.d/docker-compose
 }
 
 function vundle(){
@@ -291,18 +317,10 @@ while [ opt != '' ]
                 exit;
                 ;;
 
-            11)
+            12)
                 clear;
-                option_picked "Linking redshift config"
-                redshift_config;
-                option_picked "Operation Done!";
-                exit;
-                ;;
-
-            8)
-                clear;
-                option_picked "Linking bashrc"
-                bashrc;
+                option_picked "Installling Docker"
+                install_docker;
                 option_picked "Operation Done!";
                 exit;
                 ;;
