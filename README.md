@@ -24,6 +24,7 @@ I still need to figure out how to run individual plays and not the entire playbo
 - setup git
 - setup vim
 - configure awscli
+- configure sublimepackages
 - configure gnome
 - optimize ssd [3][4][5]
 - power management
