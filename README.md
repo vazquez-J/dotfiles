@@ -11,7 +11,7 @@ I still need to figure out how to run individual plays and not the entire playbo
 -  This is defined in `tasks/apt_packages.yml` file
 
 
-- install docker-ce 		-> TODO
+- install docker-ce
 - install docker-compose	-> TODO
 - install sublime-text
 - install adb and android-tools
@@ -29,8 +29,11 @@ I still need to figure out how to run individual plays and not the entire playbo
 - optimize ssd [3][4][5]
 - power management
 - gen github ssh keys
--
 
+### Optional:
+
+- Vagrant install
+- Vbox install
 
 ### Firefox Settings
 - Set up firefox settings to minimize disk writes
