@@ -76,9 +76,6 @@ function vundle(){
 }
 
 function install_ppas(){
-	echo 'Installing flux ppa and updating cache'
-	sudo add-apt-repository ppa:nathan-renniewaldock/flux
-	sudo apt update
 }
 
 function apt_packages(){
@@ -134,13 +131,6 @@ function gdb_init(){
     echo " Linking gdbinit"
     ln -svf "${BASEDIR}/gdb/.gdbinit" ~
     sleep 4
-}
-
-function ackrc(){
-    #ack https://www.digitalocean.com/community/tutorials/how-to-install-and-use-ack-a-grep-replacement-for-developers-on-ubuntu-14-04
-    echo " Linking ackrc"
-    ln -sv -f "${BASEDIR}/ack/.ackrc" ~
-    sleep 5
 }
 
 function git_configs(){
