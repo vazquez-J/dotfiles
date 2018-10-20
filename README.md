@@ -12,7 +12,7 @@ I still need to figure out how to run individual plays and not the entire playbo
 
 
 - install docker-ce
-- install docker-compose	-> TODO
+- install docker-compose
 - install sublime-text
 - install adb and android-tools
 - install awscli, aws-shell
