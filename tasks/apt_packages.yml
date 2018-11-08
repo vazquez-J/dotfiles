@@ -37,3 +37,4 @@
     - vlc
     - ubuntu-restricted-extras
     - ack-grep
+    - net-tools
