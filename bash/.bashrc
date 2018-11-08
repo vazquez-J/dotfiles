@@ -99,7 +99,7 @@ alias la='ls -A'
 alias l='ls -CF'
 alias cdv='cd  /home/rvazquez/Vagrant'
 
-# RV aliases 
+# RV aliases
 alias cdd='cd /home/$USER/dev'
 
 # Add an "alert" alias for long running commands.  Use like so:
@@ -126,9 +126,14 @@ if ! shopt -oq posix; then
   fi
 fi
 
-## RV 
+## RV
 export PROMPT_COMMAND="history -a; history -n"
+
+# python virtualenv stuff
 export WORKON_HOME=$HOME/.virtualenvs
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+source ~/.local/bin/virtualenvwrapper.sh
+
 # For android builds
 export USE_CCACHE=1
 
