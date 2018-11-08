@@ -1,0 +1,17 @@
+---
+- name: Setup directories
+  hosts: localhost
+  tasks:
+    - name: setup Dev dir
+      file:
+        path=~/Dev state=directory
+
+    - name: setup .local/.bin dir
+  	  file:
+        path=~/local/.bin state=directory
+
+    - name: make .virtualenvs dir
+      file:
+        path: ~/.virtualenvs
+        state: directory
+

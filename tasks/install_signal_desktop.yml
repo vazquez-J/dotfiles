@@ -1,0 +1,4 @@
+---
+- name: install signal desktop
+  tasks:
+    shell: ../scripts/install_signal_desktop.sh
