@@ -9,10 +9,20 @@
   tasks:
     - include: tasks/apt_packages.yml
     - include: tasks/make_dirs.yml
+    - include: tasks/
     - include: tasks/install_android_udev_rules.yml
     - name: install sublimetext3
         shell: scripts/install_sublimetext3.sh
         notify: echo done
+
+    - name: install virtualenv and virtualenvwrapper
+      pip:
+       executable: pip3
+       extra_args: --user
+       name: {{ items }}
+       with_items:
+        - virtualenv
+        - virtualenvwrapper
 
   - name: install docker apt-key
     apt_key:
