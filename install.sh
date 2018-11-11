@@ -75,9 +75,6 @@ function vundle(){
 	sleep 2
 }
 
-function install_ppas(){
-}
-
 function apt_packages(){
     echo 'Installing packages...'
     echo 'Adding PPAs'
