@@ -11,25 +11,38 @@
     - include: tasks/apt_install_python_packages.yml
     - include: tasks/make_dirs.yml
     - include: tasks/install_android_udev_rules.yml
+
+    - name: install sublimetext3 apt-key
+      apt_key:
+        url: https://download.sublimetext.com/sublimehq-pub.gpg
+        state: present
+      register: add_key
+
+    - name: add sublimetext3 repo
+      apt_repository:
+        repo: "deb https://download.sublimetext.com/ apt/stable/"
+        state: present
+        update_cache: yes
+
     - name: install sublimetext3
-        shell: scripts/install_sublimetext3.sh
-        notify: echo done
+      apt:
+        name: sublime-text
 
     - name: install virtualenv and virtualenvwrapper
       pip:
-       executable: pip3
-       extra_args: --user
-       name: {{ items }}
-       with_items:
+        executable: pip3
+        extra_args: --user
+        name: "{{ item }}"
+      with_items:
         - virtualenv
         - virtualenvwrapper
 
-  - name: install docker apt-key
-    apt_key:
-      url: https://download.docker.com/linux/ubuntu/gpg
-      id: 9DC858229FC7DD38854AE2D88D81803C0EBFCD88
-      state: present
-    register: add_key
+    - name: install docker apt-key
+      apt_key:
+        url: https://download.docker.com/linux/ubuntu/gpg
+        id: 9DC858229FC7DD38854AE2D88D81803C0EBFCD88
+        state: present
+      register: add_key
 
   - name: add docker repo
     apt_repository:
@@ -56,6 +69,12 @@
       file:
         src: ack/.ackrc
         dest: ~/.ackrc
+        state: link
+
+    - name: link .bashrc
+      file:
+        src: bash/.bashrc
+        dest: ~/.bashrc
         state: link
 
 # Handlers section
