@@ -1,8 +1,10 @@
 ---
-- name: Install python packages
+- name: install python packages
   when: ansible_os_family == "Debian"
+  become: true
+
   apt:
-    name: "{{items}}"
+    name: "{{ item }}"
     state: present
   with_items:
     - python-dev
