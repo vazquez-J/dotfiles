@@ -2,7 +2,7 @@
 - name: Remove apt packages
   when: ansible_os_family == "Debian"
   apt:
-    name: {{ item }}
+    name: "{{ item }}"
     state: absent
   with_items:
     - k3b
@@ -17,7 +17,7 @@
 - name: Install apt packages
   become: yes
   apt:
-    name: {{ item }}
+    name: "{{ item }}"
     state: present
   with_items:
     - zip
@@ -32,9 +32,14 @@
     - curl
     - apt-transport-https
     - ca-certificates
+    - shellcheck
     - software-properties-common
     - gnome-tweak-tool
     - vlc
     - ubuntu-restricted-extras
     - ack-grep
     - net-tools
+    - gdebi
+    - chromium-browser
+    - tlp
+    - tlp-rdw
