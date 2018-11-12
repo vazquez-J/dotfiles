@@ -1,0 +1,47 @@
+---
+- name: Remove apt packages
+  when: ansible_os_family == "Debian"
+  become: true
+
+  apt:
+    name: "{{ item }}"
+    state: absent
+  with_items:
+    - k3b
+    - pidgin
+    - thunderbird
+    - brasero
+    - xplayer
+    - gnome-orca
+    - mono-runtime-common
+    - ndiswrapper*
+
+- name: Install apt packages
+  become: yes
+  apt:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - ack-grep
+    - apt-transport-https
+    - build-essential
+    - ca-certificates
+    - chromium-browser
+    - curl
+    - gdebi
+    - git
+    - gnome-tweak-tool
+    - htop
+    - libssl-dev
+    - meld
+    - net-tools
+    - shellcheck
+    - software-properties-common
+    - tlp
+    - tlp-rdw
+    - tree
+    - ubuntu-restricted-extras
+    - vim
+    - vlc
+    - yamllint
+    - zip
