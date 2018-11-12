@@ -7,9 +7,9 @@
       changed_when: false
 
   tasks:
-    - include: tasks/apt_packages.yml
+    - include: tasks/apt_install_packages.yml
+    - include: tasks/apt_install_python_packages.yml
     - include: tasks/make_dirs.yml
-    - include: tasks/
     - include: tasks/install_android_udev_rules.yml
     - name: install sublimetext3
         shell: scripts/install_sublimetext3.sh
