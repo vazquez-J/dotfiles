@@ -10,6 +10,6 @@ Vagrant.configure("2") do |config|
   SHELL
 
   config.vm.provision "ansible" do |ansible|
-    ansible.playbook = "tasks/install_docker.yml"
+    ansible.playbook = "install.yml"
   end
 end
