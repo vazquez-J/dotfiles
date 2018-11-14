@@ -28,6 +28,18 @@
       apt:
         name: sublime-text
 
+
+    - name: install signal-desktop gpg apt-key
+      apt_key:
+        url: https://updates.signal.org/desktop/apt/keys.asc
+    - name: add signal-desktop repo
+      apt_repository:
+        repo: "deb [arch=amd64] https://updates.signal.org/desktop/apt xenial main"
+        update_cache: yes
+    - name: install signal-desktop
+      apt:
+        name: signal-desktop
+
     - name: install virtualenv and virtualenvwrapper
       pip:
         executable: pip3
@@ -61,18 +73,18 @@
         append: yes
         groups: docker
 
-    - name: install docker-compose
-      shell: "sudo curl -L "https://github.com/docker/compose/releases/download/1.22.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose && chmod +x /usr/local/bin/docker-compose"
 
 # Linking configs
     - name: link ackrc file
+      become: "{{ ansible_user_id}}"
       file:
-        src: ack/.ackrc
+        src: ./ack/.ackrc
         dest: ~/.ackrc
         state: link
 
     - name: link .bashrc
+      become: "{{ ansible_user_id}}"
       file:
-        src: bash/.bashrc
+        src: ./bash/.bashrc
         dest: ~/.bashrc
         state: link
