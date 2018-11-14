@@ -128,6 +128,7 @@ fi
 
 ## RV
 export PROMPT_COMMAND="history -a; history -n"
+export PATH=~/.local/bin:$PATH
 
 # python virtualenv stuff
 export WORKON_HOME=$HOME/.virtualenvs
