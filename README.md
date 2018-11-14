@@ -43,6 +43,10 @@ I still need to figure out how to run individual plays and not the entire playbo
    - 30m = 1800000 = 15000ms * 4 * 30
    - 1d = 86400000 ms
 
+### gsettings
+- gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize'
+
+
 ## References
 - [1] https://www.servethehome.com/firefox-is-eating-your-ssd-here-is-how-to-fix-it/
 - [2] http://unlogic.co.uk/2013/02/08/vim-as-a-python-ide/
