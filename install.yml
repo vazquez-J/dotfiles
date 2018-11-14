@@ -76,11 +76,3 @@
         src: bash/.bashrc
         dest: ~/.bashrc
         state: link
-
-# Handlers section
-# Tasks in handlers section are not called unless called by tasks
-
-handlers:
-    - name: echo done
-        shell: echo 'DOne'
-
