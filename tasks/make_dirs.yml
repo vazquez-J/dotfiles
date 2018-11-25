@@ -1,10 +1,12 @@
 ---
 - name: make dev directory
+  become: "{{ ansible_user_id}}"
   file: 
     path: ~/dev 
     state: directory
 
 - name: make .local/bin directory
+  become: "{{ ansible_user_id}}"
   file: 
     path: ~/.local/bin 
     state: directory
