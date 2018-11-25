@@ -53,6 +53,9 @@ function install_docker() {
     sudo apt install -yq docker-ce
 
     echo "Adding docker group"
+    sudo groupadd docker
+
+    echo "Adding docker group"
     sudo usermod -aG docker $USER
 
     echo "installing docker-compose"
