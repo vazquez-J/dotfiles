@@ -5,7 +5,6 @@ From project root:
 - To run the entire playbook
 `ansible-playbook --connection=local -k install.yml`
 
-I still need to figure out how to run individual plays and not the entire playbook
 
 ## list of apt packages to install and delete
 -  This is defined in `tasks/apt_packages.yml` file
@@ -45,7 +44,20 @@ I still need to figure out how to run individual plays and not the entire playbo
 
 ### gsettings
 - gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize'
+- gsettings set org.gnome.desktop.interface text-scaling-factor 1.5
+- gsettings set org.gnome.nautilus.icon-view default-zoom-level standard
+- gsettings set org.gnome.desktop.interface cursor-size 32
+- gsettings set org.gnome.shell.extensions.dash-to-dock dash-max-icon-size 64
 
+
+### Things to do:
+- figure out how to run individual plays and not the entire playbook
+- SSD optimization
+- Security
+- Turn off services
+- firefox user.js
+- Sublimetext-3 settings linking
+- generate ssh keys
 
 ## References
 - [1] https://www.servethehome.com/firefox-is-eating-your-ssd-here-is-how-to-fix-it/
@@ -55,3 +67,4 @@ I still need to figure out how to run individual plays and not the entire playbo
 - [5] https://slimbook.es/tutoriales/linux/93-optimizar-nuestro-ssd-en-linux
 - [6] https://www.linuxtechi.com/top10-things-after-installing-ubuntu-18-04/
 - ansible tags -> look this up
+- https://mensfeld.pl/2018/05/lenovo-thinkpad-x1-carbon-6th-gen-2018-ubuntu-18-04-tweaks/
