@@ -10,8 +10,3 @@
 - name: reload udev rules
   become: yes
   command: udevadm control --reload-rules
-
-- name: restart systemd-udevd.service
-  systemd:
-    name: systemd-udevd.service
-    state: reloaded
