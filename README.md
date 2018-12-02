@@ -35,7 +35,7 @@ From project root:
 - Vbox install
 
 ### Firefox Settings
-- Set up firefox settings to minimize disk writes
+- Set up firefox settings to minimize disk writes [1]
    - Need to automate this
    - about:config
    - browser.sessionstore.interval. Default set to 15 seconds change to 30m
