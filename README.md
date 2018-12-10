@@ -9,20 +9,19 @@ From project root:
 ## list of apt packages to install and delete
 -  This is defined in `tasks/apt_packages.yml` file
 
-
-- install docker-ce
+### This playbook does the following
+- install docker-ce from the official docker website
 - install docker-compose
 - install sublime-text
 - install adb and android-tools
-- install awscli, aws-shell
+- install awscli
+- install aws-shell
 - install apt packages
 - install python specific apt packages
 - uninstall apt packages
-- install aws-shell
 - setup udev rules for android usb
 - setup git
 - setup vim
-- configure awscli
 - configure sublimepackages
 - configure gnome
 - optimize ssd [3][4][5]
