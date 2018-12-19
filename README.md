@@ -3,7 +3,9 @@ This repo holds the secret for quick rebound time after a fresh install of Ubunt
 # How to run:
 From project root:
 - To run the entire playbook
-`ansible-playbook --connection=local -k install.yml`
+`ansible-playbook --connection=local -K install.yml`
+
+-K as sudo password
 
 
 ## list of apt packages to install and delete
