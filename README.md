@@ -16,6 +16,7 @@ From project root:
 - install adb and android-tools
 - install awscli
 - install aws-shell
+- add awscli autocompletion [7]
 - install apt packages
 - install python specific apt packages
 - uninstall apt packages
@@ -67,3 +68,4 @@ From project root:
 - [6] https://www.linuxtechi.com/top10-things-after-installing-ubuntu-18-04/
 - ansible tags -> look this up
 - https://mensfeld.pl/2018/05/lenovo-thinkpad-x1-carbon-6th-gen-2018-ubuntu-18-04-tweaks/
+- [7] https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-completion.html
