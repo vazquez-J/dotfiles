@@ -2,7 +2,6 @@
 - name: Remove apt packages
   when: ansible_os_family == "Debian"
   become: true
-
   apt:
     name: "{{ item }}"
     state: absent
@@ -15,6 +14,7 @@
     - gnome-orca
     - mono-runtime-common
     - ndiswrapper*
+  tags: apt
 
 - name: Install apt packages
   become: yes
@@ -45,3 +45,4 @@
     - vlc
     - yamllint
     - zip
+  tags: apt

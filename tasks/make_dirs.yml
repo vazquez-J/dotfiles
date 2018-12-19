@@ -4,9 +4,11 @@
   file:
     path: ~/dev
     state: directory
+  tags: config
 
 - name: make .local/bin directory
   become: "{{ ansible_user_id}}"
   file:
     path: ~/.local/bin
     state: directory
+  tags: config
