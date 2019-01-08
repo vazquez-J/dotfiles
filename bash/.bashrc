@@ -63,8 +63,13 @@ fi
 parse_git_branch() {
  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
 }
+
+parse_aws_env() {
+  printenv | grep AWS_PROFILE | cut -c 13-
+}
+
 if [ "$color_prompt" = yes ]; then
- PS1='[${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u\[\033[00m\]:\[\033[01;34m\]\w\[\033[01;31m\] $(parse_git_branch)\[\033[00m\]]\n\$ '
+ PS1='[${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u\[\033[00m\]:\[\033[01;34m\]\w\[\033[01;31m\] $(parse_aws_env) $(parse_git_branch)\[\033[00m\]]\n\$ '
 else
  PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w$(parse_git_branch)\$ '
 fi
@@ -101,10 +106,12 @@ alias cdv='cd  /home/rvazquez/Vagrant'
 
 # RV aliases
 alias cdd='cd /home/$USER/dev'
+alias cdj='cd ~/dev/jcrew'
+alias docker-clean-unused='docker system prune --force'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+#alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
@@ -143,4 +150,18 @@ export PATH=/opt/anaconda3/bin:$PATH
 export PATH=/opt/platform-tools:$PATH
 if [ -d /usr/local/go ]; then
         export PATH=$PATH:/usr/local/go/bin
+fi
+
+complete -C /home/rvazquez/.local/bin/vault vault
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# awscli command completion
+complete -C aws_completer aws
+
+# JCREW
+if [[ -f ~/dev/dotfiles/bash/aws-switch.sh ]]; then
+        source ~/dev/dotfiles/bash/aws-switch.sh
 fi

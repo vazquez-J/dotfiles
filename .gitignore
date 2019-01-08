@@ -7,3 +7,4 @@
 *.deb
 *.swp
 .vagrant/
+bash/aws-switch.sh
