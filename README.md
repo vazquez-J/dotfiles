@@ -30,6 +30,7 @@ From project root:
 - optimize ssd [3][4][5]
 - power management
 - gen github ssh keys
+- set swappines -> TODO
 
 ### Optional:
 
@@ -50,6 +51,7 @@ From project root:
 - gsettings set org.gnome.nautilus.icon-view default-zoom-level standard
 - gsettings set org.gnome.desktop.interface cursor-size 32
 - gsettings set org.gnome.shell.extensions.dash-to-dock dash-max-icon-size 64
+- gsettings set org.gnome.desktop.wm.keybindings switch-applications  [8]
 
 
 ### Things to do:
@@ -71,3 +73,4 @@ From project root:
 - ansible tags -> look this up
 - https://mensfeld.pl/2018/05/lenovo-thinkpad-x1-carbon-6th-gen-2018-ubuntu-18-04-tweaks/
 - [7] https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-completion.html
+- [8] https://superuser.com/questions/394376/how-to-prevent-gnome-shells-alttab-from-grouping-windows-from-similar-apps/860001
