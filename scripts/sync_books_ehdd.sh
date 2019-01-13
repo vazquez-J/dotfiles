@@ -1,3 +1,6 @@
 #!/bin/bash
 
-rsync --delete -avsh $2 "/home/$USER/Books/" /media/rvazquez/My\ Passport/Books/
+if [ -d /media/$USER/My\ Passport/Books/ ]; then
+	echo 'running rsync'
+	rsync --delete -avsh  "/home/$USER/Books/" /media/rvazquez/My\ Passport/Books/
+fi
