@@ -43,6 +43,7 @@
     - ubuntu-restricted-extras
     - vim
     - vlc
+    - xclip
     - yamllint
     - zip
   tags: apt

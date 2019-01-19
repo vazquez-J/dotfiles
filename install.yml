@@ -88,20 +88,20 @@
         append: yes
         groups: docker
 
-    # Linking configs
-    - name: link ackrc file
-      become: "{{ ansible_user_id}}"
-      file:
-        src: ack/.ackrc
-        dest: ~/.ackrc
-        state: link
+    # # Linking configs
+    # - name: link ackrc file
+    #   become: "{{ ansible_user_id}}"
+    #   file:
+    #     src: ack/.ackrc
+    #     dest: ~/.ackrc
+    #     state: link
 
-    - name: link .bashrc
-      become: "{{ ansible_user_id}}"
-      file:
-        src: bash/.bashrc
-        dest: ~/.bashrc
-        state: link
+    # - name: link .bashrc
+    #   become: "{{ ansible_user_id}}"
+    #   file:
+    #     src: bash/.bashrc
+    #     dest: ~/.bashrc
+    #     state: link
 
-    # TODO: JV this is all you
-    # - name: Link firefox user.js
+    # # TODO: JV this is all you
+    # # - name: Link firefox user.js
