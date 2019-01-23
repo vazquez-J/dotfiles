@@ -5,7 +5,9 @@ From project root:
 - To run the entire playbook
 `ansible-playbook --connection=local -K install.yml`
 
--K as sudo password
+-K ask sudo password
+
+To install with tags use `--tags "k8s"`
 
 
 ## list of apt packages to install and delete
@@ -14,6 +16,7 @@ From project root:
 ### This playbook does the following
 - install docker-ce from the official docker website
 - install docker-compose
+- install minikube -> using the k8s tag
 - install sublime-text
 - install adb and android-tools
 - install awscli
