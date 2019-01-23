@@ -16,7 +16,8 @@ To install with tags use `--tags "k8s"`
 ### This playbook does the following
 - install docker-ce from the official docker website
 - install docker-compose
-- install minikube -> using the k8s tag
+- install minikube -> using the "k8s" tag
+- install kubectl binary using version var -> using "k8s" tag
 - install sublime-text
 - install adb and android-tools
 - install awscli

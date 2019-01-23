@@ -6,6 +6,9 @@
       apt: update_cache=yes
       changed_when: false
 
+  vars:
+    kube_ctl_version: v1.13.2
+
   tasks:
     - include: tasks/apt_install_packages.yml
     - include: tasks/apt_install_python_packages.yml
@@ -95,6 +98,12 @@
         mode: a+x
       tags: k8s
 
+    - name: Install | install kubectl
+      get_url:
+        url: "https://storage.googleapis.com/kubernetes-release/release/{{ kube_ctl_version }}/bin/linux/amd64/kubectl"
+        mode: a+x
+        dest: /usr/local/bin/kubectl
+      tags: k8s
 
     # Linking configs
     - name: link ackrc file
