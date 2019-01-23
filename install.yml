@@ -88,6 +88,14 @@
         append: yes
         groups: docker
 
+    - name: Install | install minikube
+      get_url:
+        url: https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+        dest: /usr/local/bin/minikube
+        mode: a+x
+      tags: k8s
+
+
     # Linking configs
     - name: link ackrc file
       become: "{{ ansible_user_id}}"
