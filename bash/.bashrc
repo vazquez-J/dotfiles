@@ -108,8 +108,7 @@ alias cdv='cd  /home/rvazquez/Vagrant'
 alias cdd='cd /home/$USER/dev'
 alias cdj='cd ~/dev/jcrew'
 alias docker-clean-unused='docker system prune --force'
-alias fx= "firefox --new-instance --profile $(mktemp -d)"
-
+alias fx="firefox --new-instance --profile $(mktemp -d)"
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -167,3 +166,4 @@ complete -C aws_completer aws
 if [[ -f ~/dev/dotfiles/bash/aws-switch.sh ]]; then
         source ~/dev/dotfiles/bash/aws-switch.sh
 fi
+alias as='aws-switch'
