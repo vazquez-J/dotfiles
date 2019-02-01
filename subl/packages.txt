@@ -1,4 +1,0 @@
-0_package_control_loader.sublime-package
-Package Control.sublime-package
-Predawn.sublime-package
-SideBarEnhancements.sublime-package
