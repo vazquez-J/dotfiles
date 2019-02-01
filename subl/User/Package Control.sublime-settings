@@ -1,0 +1,27 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"AdvancedNewFile",
+		"Ansible",
+		"ApplySyntax",
+		"BracketHighlighter",
+		"Dockerfile Syntax Highlighting",
+		"Git",
+		"Git blame",
+		"GitGutter",
+		"JSONLint",
+		"Kubernetes Manifest autocomplete",
+		"nginx",
+		"Package Control",
+		"SideBarEnhancements",
+		"SublimeLinter",
+		"SublimeLinter-contrib-ansible-lint",
+		"SublimeLinter-eslint",
+		"Terraform",
+		"TrailingSpaces"
+	]
+}

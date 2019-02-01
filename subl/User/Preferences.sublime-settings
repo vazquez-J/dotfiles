@@ -1,0 +1,25 @@
+{
+	"ensure_newline_at_eof_on_save": true,
+	"folder_exclude_patterns":
+	[
+		".svn",
+		".git",
+		".vscode",
+		".hg",
+		".vagrant",
+		"CVS"
+	],
+	"font_size": 10,
+	"highlight_line": true,
+	"ignored_packages":
+	[
+		"Kubernetes Manifest autocomplete",
+		"Vintage"
+	],
+	"margin": -1,
+	"preview_on_click": false,
+	"remember_full_screen": true,
+	"theme": "Adaptive.sublime-theme",
+	"trim_trailing_white_space_on_save": true,
+	"word_wrap": true
+}

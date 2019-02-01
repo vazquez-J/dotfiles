@@ -1,0 +1,26 @@
+{
+    "trailing_spaces_enabled" : true,
+    "trailing_spaces_include_empty_lines" : false,
+    "trailing_spaces_include_current_line" : false,
+    "trailing_spaces_modified_lines_only": false,
+
+    // By default, nothing happens on save.
+    // Set to true to trim trailing spaces before saving, with respect to the
+    // other settings.
+    "trailing_spaces_trim_on_save": true,
+
+    // By default, deleting trailing spaces does not cause the document to be
+    // saved.
+    // Set to true to force saving after trailing spaces have been deleted.
+    // This setting is irrelevant and will be ignored if trim_on_save is true.
+    "trailing_spaces_save_after_trim": true,
+
+    // ---- NEXT SETTINGS ARE FOR POWER USERS ONLY! ----
+
+    // Highlighting will be disabled if the edited file's size is larger than
+    // this.
+    // Adjust the value (in number of chars) to whatever fits your performance.
+    "trailing_spaces_file_max_size" : 1048576,
+
+    "trailing_spaces_regexp": "[ \t]+"
+}
